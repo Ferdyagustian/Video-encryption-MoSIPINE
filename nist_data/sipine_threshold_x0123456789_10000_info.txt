@@ -1,0 +1,12 @@
+Sine-PWLCM NIST Test Data Generator
+====================================
+Tanggal         : 2026-04-06 16:10:29.878807
+x0              : 0.123456789
+p (PWLCM)      : 0.3678
+beta (Sine)    : 0.99
+Panjang         : 10000 bit
+Metode konversi : threshold
+Iterasi buang   : 1000
+File .bin       : nist_data\sipine_threshold_x0123456789_10000.bin
+File .txt       : nist_data\sipine_threshold_x0123456789_10000.txt
+Rasio bit '1'   : 0.620400

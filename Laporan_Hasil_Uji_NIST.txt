@@ -1,0 +1,28 @@
+LAPORAN HASIL UJI NIST SP 800-22 Rev 1a
+Tanggal     : 2026-04-12 13:56:43
+File Input  : Hasil_Uji_NIST_SubSampling.txt
+Total Bit   : 1,000,000
+Alpha (a)   : 0.01
+Implementasi: Manual (mengikuti spesifikasi NIST SP 800-22 Rev 1a)
+========================================================================
+  No   Nama Uji                                 P-Value      Status  
+  --------------------------------------------------------------------
+  1    Monobit                                  0.799496     LULUS
+  2    Frequency Within Block                   0.206444     LULUS
+  3    Runs                                     0.677457     LULUS
+  4    Longest Run Ones In A Block              0.467104     LULUS
+  5    Binary Matrix Rank                       0.639543     LULUS
+  6    Discrete Fourier Transform               0.514698     LULUS
+  7    Non Overlapping Template Matching        0.753969     LULUS
+  8    Maurers Universal                        0.540336     LULUS
+  9    Linear Complexity                        0.184947     LULUS
+  10   Serial                                   0.707313     LULUS
+  11   Approximate Entropy                      0.666937     LULUS
+  12   Cumulative Sums                          0.768221     LULUS
+  --------------------------------------------------------------------
+
+  RINGKASAN:
+  Uji Lulus     : 12/12 (100.0%)
+  Uji Gagal     : 0/12
+  Waktu Uji     : 125.73 detik
+========================================================================
