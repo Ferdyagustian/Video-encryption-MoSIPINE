@@ -1,0 +1,60 @@
+[
+  {
+    "order": 1,
+    "title": "Pendahuluan & Dokumentasi Sistem",
+    "description": "Langkah awal untuk memahami keseluruhan arsitektur proyek, peta chaos yang digunakan (Modulo Sine-PWLCM), struktur file utama, dependensi, dan rumus evaluasi yang diimplementasikan.",
+    "nodeIds": [
+      "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "Algoritma Inti Chaotic Map (sipine.py)",
+    "description": "Analisis file sipine.py yang berisi logika matematika utama untuk pembangkitan keystream chaos, termasuk fase pemanasan, umpan balik (feedback injection), sub-sampling, dan folding Cascade XOR. Menggunakan dekorator @jit dari Numba untuk kompilasi performa tinggi.",
+    "nodeIds": [
+      "file:sipine.py"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Backend Enkripsi Video dan Audio (video_core.py)",
+    "description": "Pelajari bagaimana video-audio terpadu dienkripsi dan didekripsi. Proses ini melibatkan konversi frame video menggunakan OpenCV, integrasi audio menggunakan ffmpeg, dan penulisan ke format berkas kustom .ven2.",
+    "nodeIds": [
+      "file:video_core.py"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Backend Enkripsi Audio Standalone (audio_core.py)",
+    "description": "Pelajari backend terpisah audio_core.py yang khusus menangani enkripsi dan dekripsi audio format WAV dengan mode penambahan noise acak.",
+    "nodeIds": [
+      "file:audio_core.py"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Pencarian Kunci Optimal berbasis AI (ai_optimizer.py)",
+    "description": "Menelusuri modul ai_optimizer.py yang mengoptimalkan parameter kondisi awal peta chaos (x1, x2, p, beta) melalui estimasi Lyapunov Exponent dan kalkulasi entropi bitstream acak.",
+    "nodeIds": [
+      "file:ai_optimizer.py"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Antarmuka Pengguna Utama (gui_video_main.py & gui_video.py)",
+    "description": "Pahami bagaimana aplikasi desktop GUI diinisialisasi melalui gui_video_main.py, dan visualisasi pemutar video serta modul analisis histogram, diagram pencar, korelasi Pearson, NPCR, UACI, dan PSNR dalam gui_video.py.",
+    "nodeIds": [
+      "file:gui_video_main.py",
+      "file:gui_video.py"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Pengujian Statistik NIST SP 800-22 (generator_nist.py)",
+    "description": "Terakhir, lihat bagaimana generator_nist.py memproduksi bitstream biner 1 Megabit untuk diuji di paket uji standar NIST, serta dokumen Laporan_Hasil_Uji_NIST.txt yang mencatat hasil kelulusan pengujian keacakan tersebut.",
+    "nodeIds": [
+      "file:generator_nist.py",
+      "document:Laporan_Hasil_Uji_NIST.txt"
+    ]
+  }
+]

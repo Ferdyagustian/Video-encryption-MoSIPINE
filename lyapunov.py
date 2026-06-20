@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 from sipine import sine_pwlcm_map  #
 
 # Parameter Utama
-x0 = 0.123456
-beta = 0.99
+x0 = 0.98372
+beta = 0.83
 iterasi_buang = 2000
 iterasi = 1000
-dx = 1e-7  # Delta x untuk turunan numerik
+dx = 1e-7  
 
 # Menggunakan 1000 titik agar resolusi grafik sama halusnya dengan diagram bifurkasi
 p_values = np.linspace(0.01, 0.49, 1000)

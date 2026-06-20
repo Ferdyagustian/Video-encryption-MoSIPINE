@@ -1,0 +1,12 @@
+╔═══════════════════════════════════════════
+║       AI KEY REPORT — MO-SiPINE          ║
+╚═══════════════════════════════════════════
+
+Mode Enkripsi : MOSIPINE
+Entropy Score : 7.9970150163  (ideal: 8.0)
+
+──── SALIN NILAI INI UNTUK DEKRIPSI ────
+x1   = 0.2966084460
+x2   = 0.7205948707
+p    = 0.1792967169
+beta = 0.7593845329

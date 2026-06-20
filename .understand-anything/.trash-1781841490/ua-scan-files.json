@@ -1,0 +1,213 @@
+{
+  "scriptCompleted": true,
+  "files": [
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "ai_optimizer.py",
+      "language": "python",
+      "sizeLines": 221,
+      "fileCategory": "code"
+    },
+    {
+      "path": "audio_core.py",
+      "language": "python",
+      "sizeLines": 356,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bifurkasi.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "language": "txt",
+      "sizeLines": 607,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "fix_avi.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "generator_nist.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    },
+    {
+      "path": "gui_video_main.py",
+      "language": "python",
+      "sizeLines": 131,
+      "fileCategory": "code"
+    },
+    {
+      "path": "gui_video.py",
+      "language": "python",
+      "sizeLines": 1924,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hasil nist 100.txt",
+      "language": "txt",
+      "sizeLines": 42,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Hasil_Uji_NIST_SubSampling.bin",
+      "language": "bin",
+      "sizeLines": 490,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Hasil_Uji_NIST_SubSampling.txt",
+      "language": "txt",
+      "sizeLines": 0,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "hasiluji.txt",
+      "language": "txt",
+      "sizeLines": 51,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Laporan_Hasil_Uji_NIST.txt",
+      "language": "txt",
+      "sizeLines": 28,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "lyapunov.py",
+      "language": "python",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000_info.txt",
+      "language": "txt",
+      "sizeLines": 12,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000.bin",
+      "language": "bin",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000.txt",
+      "language": "txt",
+      "sizeLines": 0,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "pyrightconfig.json",
+      "language": "json",
+      "sizeLines": 10,
+      "fileCategory": "config"
+    },
+    {
+      "path": "sipine.py",
+      "language": "python",
+      "sizeLines": 264,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/AI_Key_Report.txt",
+      "language": "txt",
+      "sizeLines": 12,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Tempat_gambar/audio_asli.wav",
+      "language": "wav",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/audio_noise.wav",
+      "language": "wav",
+      "sizeLines": 3458,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/audio_terdekripsi.wav",
+      "language": "wav",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/audio_terenkripsi.bin",
+      "language": "bin",
+      "sizeLines": 5502,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/output_terenkripsi.mkv",
+      "language": "mkv",
+      "sizeLines": 19103,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/video_terdekripsi.avi",
+      "language": "avi",
+      "sizeLines": 10169,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/video_terenkripsi.bin",
+      "language": "bin",
+      "sizeLines": 55287,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/video_terenkripsi.ven2",
+      "language": "ven2",
+      "sizeLines": 620855,
+      "fileCategory": "code"
+    },
+    {
+      "path": "video_core.py",
+      "language": "python",
+      "sizeLines": 596,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 31,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "moderate",
+  "stats": {
+    "filesScanned": 31,
+    "byCategory": {
+      "code": 21,
+      "config": 2,
+      "docs": 8
+    },
+    "byLanguage": {
+      "unknown": 1,
+      "json": 2,
+      "python": 10,
+      "txt": 8,
+      "bin": 4,
+      "wav": 3,
+      "mkv": 1,
+      "avi": 1,
+      "ven2": 1
+    }
+  }
+}

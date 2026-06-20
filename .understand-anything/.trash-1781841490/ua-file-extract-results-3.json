@@ -1,0 +1,103 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 607,
+      "nonEmptyLines": 513,
+      "metrics": {}
+    },
+    {
+      "path": "Hasil_Uji_NIST_SubSampling.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    },
+    {
+      "path": "Laporan_Hasil_Uji_NIST.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 27,
+      "metrics": {}
+    },
+    {
+      "path": "hasil nist 100.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 42,
+      "nonEmptyLines": 40,
+      "metrics": {}
+    },
+    {
+      "path": "hasiluji.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 51,
+      "nonEmptyLines": 49,
+      "metrics": {}
+    },
+    {
+      "path": "pyrightconfig.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "pythonVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "typeCheckingMode",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "reportMissingImports",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "reportMissingModuleSource",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "reportUndefinedVariable",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "reportGeneralTypeIssues",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "reportAttributeAccessIssue",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "useLibraryCodeForTypes",
+          "level": 1,
+          "line": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

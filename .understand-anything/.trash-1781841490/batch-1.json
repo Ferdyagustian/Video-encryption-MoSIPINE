@@ -1,0 +1,1225 @@
+{
+  "nodes": [
+    {
+      "id": "file:ai_optimizer.py",
+      "type": "file",
+      "name": "ai_optimizer.py",
+      "filePath": "ai_optimizer.py",
+      "summary": "Modul untuk mencari parameter atau kunci optimal peta chaos menggunakan pencarian acak (Random Search) dan optimasi Lyapunov exponent.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "optimasi-ai"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:gui_video.py",
+      "type": "file",
+      "name": "gui_video.py",
+      "filePath": "gui_video.py",
+      "summary": "Modul implementasi GUI Tkinter lengkap untuk enkripsi, dekripsi, pemutar video, dan visualisasi uji kualitas.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "gui-tkinter"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:gui_video_main.py",
+      "type": "file",
+      "name": "gui_video_main.py",
+      "filePath": "gui_video_main.py",
+      "summary": "Entry point utama aplikasi desktop berbasis GUI Tkinter.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "gui-tkinter"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:video_core.py",
+      "type": "file",
+      "name": "video_core.py",
+      "filePath": "video_core.py",
+      "summary": "Modul utama backend untuk memproses enkripsi dan dekripsi video serta audio terpadu menggunakan keystream dari peta chaos.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "backend-kripto"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:ai_optimizer.py:calculate_entropy",
+      "type": "function",
+      "name": "calculate_entropy",
+      "filePath": "ai_optimizer.py",
+      "lineRange": [
+        33,
+        44
+      ],
+      "summary": "Fungsi calculate_entropy untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:ai_optimizer.py:_lyapunov_estimate",
+      "type": "function",
+      "name": "_lyapunov_estimate",
+      "filePath": "ai_optimizer.py",
+      "lineRange": [
+        47,
+        73
+      ],
+      "summary": "Fungsi _lyapunov_estimate untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:ai_optimizer.py:_perturb_near",
+      "type": "function",
+      "name": "_perturb_near",
+      "filePath": "ai_optimizer.py",
+      "lineRange": [
+        81,
+        96
+      ],
+      "summary": "Fungsi _perturb_near untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:ai_optimizer.py:predict_best_keys",
+      "type": "function",
+      "name": "predict_best_keys",
+      "filePath": "ai_optimizer.py",
+      "lineRange": [
+        100,
+        221
+      ],
+      "summary": "Fungsi predict_best_keys untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:gui_video.py:VideoPlayer",
+      "type": "class",
+      "name": "VideoPlayer",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        29,
+        214
+      ],
+      "summary": "Kelas VideoPlayer yang berisi properti dan metode terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "kelas-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:gui_video.py:pencet6",
+      "type": "function",
+      "name": "pencet6",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        216,
+        615
+      ],
+      "summary": "Fungsi pencet6 untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:gui_video.py:pencet7",
+      "type": "function",
+      "name": "pencet7",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        618,
+        858
+      ],
+      "summary": "Fungsi pencet7 untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:gui_video.py:_pearson_v",
+      "type": "function",
+      "name": "_pearson_v",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        881,
+        893
+      ],
+      "summary": "Fungsi _pearson_v untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:gui_video.py:_pearson_temporal",
+      "type": "function",
+      "name": "_pearson_temporal",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        895,
+        905
+      ],
+      "summary": "Fungsi _pearson_temporal untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:gui_video.py:_prompt_and_extract_frames",
+      "type": "function",
+      "name": "_prompt_and_extract_frames",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        915,
+        948
+      ],
+      "summary": "Fungsi _prompt_and_extract_frames untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:gui_video.py:_extract_3_frames",
+      "type": "function",
+      "name": "_extract_3_frames",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        959,
+        982
+      ],
+      "summary": "Fungsi _extract_3_frames untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:gui_video.py:_extract_key_frames",
+      "type": "function",
+      "name": "_extract_key_frames",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        984,
+        1026
+      ],
+      "summary": "Fungsi _extract_key_frames untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:gui_video.py:_make_slot_2img",
+      "type": "function",
+      "name": "_make_slot_2img",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        1028,
+        1067
+      ],
+      "summary": "Fungsi _make_slot_2img untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:gui_video.py:uji_histogram_korelasi_video",
+      "type": "function",
+      "name": "uji_histogram_korelasi_video",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        1071,
+        1171
+      ],
+      "summary": "Fungsi uji_histogram_korelasi_video untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:gui_video.py:uji_distribusi_scatter_video",
+      "type": "function",
+      "name": "uji_distribusi_scatter_video",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        1175,
+        1270
+      ],
+      "summary": "Fungsi uji_distribusi_scatter_video untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:gui_video.py:uji_statistik_video",
+      "type": "function",
+      "name": "uji_statistik_video",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        1274,
+        1357
+      ],
+      "summary": "Fungsi uji_statistik_video untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:gui_video.py:enkripsi_audio_standalone",
+      "type": "function",
+      "name": "enkripsi_audio_standalone",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        1364,
+        1536
+      ],
+      "summary": "Fungsi enkripsi_audio_standalone untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:gui_video.py:dekripsi_audio_standalone",
+      "type": "function",
+      "name": "dekripsi_audio_standalone",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        1539,
+        1703
+      ],
+      "summary": "Fungsi dekripsi_audio_standalone untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:gui_video.py:uji_kualitas_audio",
+      "type": "function",
+      "name": "uji_kualitas_audio",
+      "filePath": "gui_video.py",
+      "lineRange": [
+        1710,
+        1923
+      ],
+      "summary": "Fungsi uji_kualitas_audio untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:gui_video_main.py:_make_btn",
+      "type": "function",
+      "name": "_make_btn",
+      "filePath": "gui_video_main.py",
+      "lineRange": [
+        30,
+        39
+      ],
+      "summary": "Fungsi _make_btn untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:gui_video_main.py:build_main",
+      "type": "function",
+      "name": "build_main",
+      "filePath": "gui_video_main.py",
+      "lineRange": [
+        46,
+        127
+      ],
+      "summary": "Fungsi build_main untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:video_core.py:encrypt_video_audio_to_VEN2",
+      "type": "function",
+      "name": "encrypt_video_audio_to_VEN2",
+      "filePath": "video_core.py",
+      "lineRange": [
+        31,
+        165
+      ],
+      "summary": "Fungsi encrypt_video_audio_to_VEN2 untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:video_core.py:decrypt_VEN2_to_video_audio",
+      "type": "function",
+      "name": "decrypt_VEN2_to_video_audio",
+      "filePath": "video_core.py",
+      "lineRange": [
+        168,
+        310
+      ],
+      "summary": "Fungsi decrypt_VEN2_to_video_audio untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:video_core.py:export_bin_to_noise_video",
+      "type": "function",
+      "name": "export_bin_to_noise_video",
+      "filePath": "video_core.py",
+      "lineRange": [
+        313,
+        429
+      ],
+      "summary": "Fungsi export_bin_to_noise_video untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:video_core.py:decrypt_VEN2_to_video",
+      "type": "function",
+      "name": "decrypt_VEN2_to_video",
+      "filePath": "video_core.py",
+      "lineRange": [
+        433,
+        516
+      ],
+      "summary": "Fungsi decrypt_VEN2_to_video untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:video_core.py:extract_sample_frames",
+      "type": "function",
+      "name": "extract_sample_frames",
+      "filePath": "video_core.py",
+      "lineRange": [
+        519,
+        558
+      ],
+      "summary": "Fungsi extract_sample_frames untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "function",
+      "name": "extract_single_frame_from_bin",
+      "filePath": "video_core.py",
+      "lineRange": [
+        561,
+        595
+      ],
+      "summary": "Fungsi extract_single_frame_from_bin untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:calculate_entropy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:calculate_entropy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:_lyapunov_estimate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:_lyapunov_estimate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:_perturb_near",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:_perturb_near",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:predict_best_keys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "function:ai_optimizer.py:predict_best_keys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "class:gui_video.py:VideoPlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "class:gui_video.py:VideoPlayer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:pencet6",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:pencet6",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:pencet7",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:pencet7",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_pearson_v",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_pearson_v",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_pearson_temporal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_pearson_temporal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_prompt_and_extract_frames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_prompt_and_extract_frames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_extract_3_frames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_extract_3_frames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_extract_key_frames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_extract_key_frames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_make_slot_2img",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:_make_slot_2img",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_histogram_korelasi_video",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_histogram_korelasi_video",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_distribusi_scatter_video",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_distribusi_scatter_video",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_statistik_video",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_statistik_video",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:enkripsi_audio_standalone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:enkripsi_audio_standalone",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:dekripsi_audio_standalone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:dekripsi_audio_standalone",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_kualitas_audio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "function:gui_video.py:uji_kualitas_audio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video_main.py",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video_main.py",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:gui_video_main.py",
+      "target": "function:gui_video_main.py:build_main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:gui_video_main.py",
+      "target": "function:gui_video_main.py:build_main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:encrypt_video_audio_to_VEN2",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:encrypt_video_audio_to_VEN2",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:decrypt_VEN2_to_video_audio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:decrypt_VEN2_to_video_audio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:export_bin_to_noise_video",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:export_bin_to_noise_video",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:decrypt_VEN2_to_video",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:decrypt_VEN2_to_video",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:extract_sample_frames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:extract_sample_frames",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:ai_optimizer.py",
+      "target": "file:sipine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "file:ai_optimizer.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:gui_video.py",
+      "target": "file:video_core.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:gui_video_main.py",
+      "target": "file:gui_video.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:video_core.py",
+      "target": "file:sipine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:ai_optimizer.py:_lyapunov_estimate",
+      "target": "function:sipine.py:sine_pwlcm_map",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:_lyapunov_estimate",
+      "target": "function:sipine.py:sine_pwlcm_map",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:_lyapunov_estimate",
+      "target": "function:sipine.py:sine_pwlcm_map",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:_perturb_near",
+      "target": "function:ai_optimizer.py:_clamp",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:_perturb_near",
+      "target": "function:ai_optimizer.py:_clamp",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:_perturb_near",
+      "target": "function:ai_optimizer.py:_clamp",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:_perturb_near",
+      "target": "function:ai_optimizer.py:_clamp",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:predict_best_keys",
+      "target": "function:ai_optimizer.py:_perturb_near",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:predict_best_keys",
+      "target": "function:ai_optimizer.py:_lyapunov_estimate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:predict_best_keys",
+      "target": "function:ai_optimizer.py:_lyapunov_estimate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:predict_best_keys",
+      "target": "function:sipine.py:generate_keystream_sine_only",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:predict_best_keys",
+      "target": "function:sipine.py:generate_keystream_pwlcm_only",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:predict_best_keys",
+      "target": "function:sipine.py:generate_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:ai_optimizer.py:predict_best_keys",
+      "target": "function:ai_optimizer.py:calculate_entropy",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:_prompt_and_extract_frames",
+      "target": "function:video_core.py:extract_sample_frames",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:_prompt_and_extract_frames",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:_prompt_and_extract_frames",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:_prompt_and_extract_frames",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:_extract_3_frames",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:_extract_key_frames",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:_extract_key_frames",
+      "target": "function:video_core.py:extract_single_frame_from_bin",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:uji_histogram_korelasi_video",
+      "target": "function:gui_video.py:_make_slot_2img",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:uji_histogram_korelasi_video",
+      "target": "function:gui_video.py:_make_slot_2img",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:uji_statistik_video",
+      "target": "function:gui_video.py:_make_slot_2img",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video.py:uji_statistik_video",
+      "target": "function:gui_video.py:_make_slot_2img",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_separator",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video.py:pencet6",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video.py:pencet7",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_separator",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video.py:uji_histogram_korelasi_video",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video.py:uji_distribusi_scatter_video",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video.py:uji_statistik_video",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video.py:uji_kualitas_audio",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_separator",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:gui_video_main.py:build_main",
+      "target": "function:gui_video_main.py:_make_btn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:video_core.py:encrypt_video_audio_to_VEN2",
+      "target": "function:video_core.py:_get_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:video_core.py:encrypt_video_audio_to_VEN2",
+      "target": "function:video_core.py:_get_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:video_core.py:decrypt_VEN2_to_video_audio",
+      "target": "function:video_core.py:_get_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:video_core.py:decrypt_VEN2_to_video_audio",
+      "target": "function:video_core.py:_get_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:video_core.py:decrypt_VEN2_to_video",
+      "target": "function:video_core.py:_get_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

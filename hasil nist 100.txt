@@ -1,0 +1,42 @@
+Test Data File (String/URL):
+C:/Skripsi/Hasil_Uji_NIST_SubSampling.txt
+
+
+Type of Test                                      	P-Value             	Conclusion
+01. Frequency (Monobit) Test                      	0.0                 	Non-Random
+02. Frequency Test within a Block                 	0.0                 	Non-Random
+03. Runs Test                                     	0.0                 	Non-Random
+04. Test for the Longest Run of Ones in a Block   	0.0                 	Non-Random
+05. Binary Matrix Rank Test                       	0.0                 	Non-Random
+06. Discrete Fourier Transform (Spectral) Test    	0.0                 	Non-Random
+07. Non-overlapping Template Matching Test        	0.0                 	Non-Random
+08. Overlapping Template Matching Test            	0.0                 	Non-Random
+09. Maurer's "Universal Statistical" Test         	0.0                 	Non-Random
+10. Linear Complexity Test                        	0.0                 	Non-Random
+11. Serial Test:
+													0.0                 	Non-Random
+													0.0                 	Non-Random
+12. Approximate Entropy Test                      	0.0                 	Non-Random
+13. Cumulative Sums Test (Forward)                	0.0                 	Non-Random
+14. Cumulative Sums Test (Backward)               	0.0                 	Non-Random
+15. Random Excursions Test:
+				State     	Chi Squared         	P-Value             	Conclusion
+				-4        	46.33819241982507   	7.750306806822414e-09	Non-Random
+				-3        	29.703999999999994  	1.686489072431905e-05	Non-Random
+				-2        	20.22222222222222   	0.001135227659133417	Non-Random
+				-1        	4.0                 	0.5494159513527803  	Random
+				+1        	2.0                 	0.8491450360846096  	Random
+				+2        	0.6666666666666666  	0.984747879018509   	Random
+				+3        	0.4                 	0.9953295932358704  	Random
+				+4        	0.2857142857142857  	0.9979031595107858  	Random
+16. Random Excursions Variant Test:
+				State     	COUNTS              	P-Value             	Conclusion
+				-9.0      	1                   	0.9034789137192296  	Random
+				-8.0      	2                   	1.0                 	Random
+				-7.0      	4                   	0.7815112949987133  	Random
+				-6.0      	4                   	0.763024600552995   	Random
+				-5.0      	4                   	0.7388826803635272  	Random
+				-4.0      	4                   	0.7054569861112734  	Random
+				-3.0      	4                   	0.6547208460185769  	Random
+				-2.0      	4                   	0.5637028616507731  	Random
+				-1.0      	3                   	0.6170750774519739  	Random

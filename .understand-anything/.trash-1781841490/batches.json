@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 31,
+  "totalBatches": 4,
+  "exportsByPath": {
+    ".understand-anything/.understandignore": [],
+    "ai_optimizer.py": [
+      "calculate_entropy",
+      "_lyapunov_estimate",
+      "_clamp",
+      "_perturb_near",
+      "predict_best_keys"
+    ],
+    "audio_core.py": [
+      "_get_ffmpeg",
+      "_get_keystream",
+      "extract_audio_from_video",
+      "encrypt_audio",
+      "decrypt_audio",
+      "audio_to_noise_wav",
+      "mux_video_audio",
+      "mux_video_audio_lossless",
+      "demux_video_audio"
+    ],
+    "bifurkasi.py": [
+      "sine_pwlcm_map"
+    ],
+    "fix_avi.py": [],
+    "generator_nist.py": [
+      "hitung_progress",
+      "validasi_entropy_awal",
+      "hitung_statistik_bitstream"
+    ],
+    "gui_video_main.py": [
+      "_make_btn",
+      "_separator",
+      "build_main"
+    ],
+    "gui_video.py": [
+      "_create_placeholder",
+      "VideoPlayer",
+      "pencet6",
+      "pencet7",
+      "_ujiuniform_v",
+      "_uaci_v",
+      "_npcr_v",
+      "_pearson_v",
+      "_pearson_temporal",
+      "_psnr_mse_v",
+      "_entropy_v",
+      "_prompt_and_extract_frames",
+      "_detect_type",
+      "_extract_3_frames",
+      "_extract_key_frames",
+      "_make_slot_2img",
+      "uji_histogram_korelasi_video",
+      "uji_distribusi_scatter_video",
+      "uji_statistik_video",
+      "enkripsi_audio_standalone",
+      "dekripsi_audio_standalone",
+      "uji_kualitas_audio"
+    ],
+    "Hasil_Uji_NIST_SubSampling.bin": [],
+    "lyapunov.py": [],
+    "nist_data/sipine_threshold_x0123456789_10000.bin": [],
+    "sipine.py": [
+      "_sine_pwlcm_step",
+      "_sine_only_step",
+      "_pwlcm_only_step",
+      "_generate_keystream_core",
+      "_generate_keystream_video",
+      "sine_pwlcm_map",
+      "generate_keystream",
+      "generate_keystream_sine_only",
+      "generate_keystream_pwlcm_only",
+      "generate_keystream_np",
+      "generate_keystream_video_np",
+      "_warmup"
+    ],
+    "Tempat_gambar/audio_asli.wav": [],
+    "Tempat_gambar/audio_noise.wav": [],
+    "Tempat_gambar/audio_terdekripsi.wav": [],
+    "Tempat_gambar/audio_terenkripsi.bin": [],
+    "Tempat_gambar/output_terenkripsi.mkv": [],
+    "Tempat_gambar/video_terdekripsi.avi": [],
+    "Tempat_gambar/video_terenkripsi.bin": [],
+    "Tempat_gambar/video_terenkripsi.ven2": [],
+    "video_core.py": [
+      "_get_keystream",
+      "encrypt_video_audio_to_VEN2",
+      "decrypt_VEN2_to_video_audio",
+      "export_bin_to_noise_video",
+      "decrypt_VEN2_to_video",
+      "extract_sample_frames",
+      "extract_single_frame_from_bin"
+    ]
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "ai_optimizer.py",
+          "language": "python",
+          "sizeLines": 221,
+          "fileCategory": "code"
+        },
+        {
+          "path": "gui_video.py",
+          "language": "python",
+          "sizeLines": 1924,
+          "fileCategory": "code"
+        },
+        {
+          "path": "gui_video_main.py",
+          "language": "python",
+          "sizeLines": 131,
+          "fileCategory": "code"
+        },
+        {
+          "path": "video_core.py",
+          "language": "python",
+          "sizeLines": 596,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "ai_optimizer.py": [
+          "sipine.py"
+        ],
+        "gui_video.py": [
+          "ai_optimizer.py",
+          "video_core.py"
+        ],
+        "gui_video_main.py": [
+          "gui_video.py"
+        ],
+        "video_core.py": [
+          "sipine.py"
+        ]
+      },
+      "neighborMap": {
+        "ai_optimizer.py": [
+          {
+            "path": "sipine.py",
+            "batchIndex": 2,
+            "symbols": [
+              "_sine_pwlcm_step",
+              "_sine_only_step",
+              "_pwlcm_only_step",
+              "_generate_keystream_core",
+              "_generate_keystream_video",
+              "sine_pwlcm_map",
+              "generate_keystream",
+              "generate_keystream_sine_only",
+              "generate_keystream_pwlcm_only",
+              "generate_keystream_np",
+              "generate_keystream_video_np",
+              "_warmup"
+            ]
+          }
+        ],
+        "video_core.py": [
+          {
+            "path": "sipine.py",
+            "batchIndex": 2,
+            "symbols": [
+              "_sine_pwlcm_step",
+              "_sine_only_step",
+              "_pwlcm_only_step",
+              "_generate_keystream_core",
+              "_generate_keystream_video",
+              "sine_pwlcm_map",
+              "generate_keystream",
+              "generate_keystream_sine_only",
+              "generate_keystream_pwlcm_only",
+              "generate_keystream_np",
+              "generate_keystream_video_np",
+              "_warmup"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "audio_core.py",
+          "language": "python",
+          "sizeLines": 356,
+          "fileCategory": "code"
+        },
+        {
+          "path": "generator_nist.py",
+          "language": "python",
+          "sizeLines": 208,
+          "fileCategory": "code"
+        },
+        {
+          "path": "lyapunov.py",
+          "language": "python",
+          "sizeLines": 56,
+          "fileCategory": "code"
+        },
+        {
+          "path": "sipine.py",
+          "language": "python",
+          "sizeLines": 264,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "audio_core.py": [
+          "sipine.py"
+        ],
+        "generator_nist.py": [
+          "sipine.py"
+        ],
+        "lyapunov.py": [
+          "sipine.py"
+        ],
+        "sipine.py": []
+      },
+      "neighborMap": {
+        "sipine.py": [
+          {
+            "path": "ai_optimizer.py",
+            "batchIndex": 1,
+            "symbols": [
+              "calculate_entropy",
+              "_lyapunov_estimate",
+              "_clamp",
+              "_perturb_near",
+              "predict_best_keys"
+            ]
+          },
+          {
+            "path": "video_core.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_get_keystream",
+              "encrypt_video_audio_to_VEN2",
+              "decrypt_VEN2_to_video_audio",
+              "export_bin_to_noise_video",
+              "decrypt_VEN2_to_video",
+              "extract_sample_frames",
+              "extract_single_frame_from_bin"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+          "language": "txt",
+          "sizeLines": 607,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "Hasil_Uji_NIST_SubSampling.txt",
+          "language": "txt",
+          "sizeLines": 0,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "Laporan_Hasil_Uji_NIST.txt",
+          "language": "txt",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "hasil nist 100.txt",
+          "language": "txt",
+          "sizeLines": 42,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "hasiluji.txt",
+          "language": "txt",
+          "sizeLines": 51,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "pyrightconfig.json",
+          "language": "json",
+          "sizeLines": 10,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "DOKUMENTASI_SISTEM_MO_SIPINE.txt": [],
+        "Hasil_Uji_NIST_SubSampling.txt": [],
+        "Laporan_Hasil_Uji_NIST.txt": [],
+        "hasil nist 100.txt": [],
+        "hasiluji.txt": [],
+        "pyrightconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": ".understand-anything/.understandignore",
+          "language": "unknown",
+          "sizeLines": 27,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".understand-anything/config.json",
+          "language": "json",
+          "sizeLines": 3,
+          "fileCategory": "config"
+        },
+        {
+          "path": "bifurkasi.py",
+          "language": "python",
+          "sizeLines": 49,
+          "fileCategory": "code"
+        },
+        {
+          "path": "fix_avi.py",
+          "language": "python",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Hasil_Uji_NIST_SubSampling.bin",
+          "language": "bin",
+          "sizeLines": 490,
+          "fileCategory": "code"
+        },
+        {
+          "path": "nist_data/sipine_threshold_x0123456789_10000_info.txt",
+          "language": "txt",
+          "sizeLines": 12,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "nist_data/sipine_threshold_x0123456789_10000.bin",
+          "language": "bin",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "nist_data/sipine_threshold_x0123456789_10000.txt",
+          "language": "txt",
+          "sizeLines": 0,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "Tempat_gambar/AI_Key_Report.txt",
+          "language": "txt",
+          "sizeLines": 12,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "Tempat_gambar/audio_asli.wav",
+          "language": "wav",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Tempat_gambar/audio_noise.wav",
+          "language": "wav",
+          "sizeLines": 3458,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Tempat_gambar/audio_terdekripsi.wav",
+          "language": "wav",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Tempat_gambar/audio_terenkripsi.bin",
+          "language": "bin",
+          "sizeLines": 5502,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Tempat_gambar/output_terenkripsi.mkv",
+          "language": "mkv",
+          "sizeLines": 19103,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Tempat_gambar/video_terdekripsi.avi",
+          "language": "avi",
+          "sizeLines": 10169,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Tempat_gambar/video_terenkripsi.bin",
+          "language": "bin",
+          "sizeLines": 55287,
+          "fileCategory": "code"
+        },
+        {
+          "path": "Tempat_gambar/video_terenkripsi.ven2",
+          "language": "ven2",
+          "sizeLines": 620855,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        ".understand-anything/.understandignore": [],
+        ".understand-anything/config.json": [],
+        "bifurkasi.py": [],
+        "fix_avi.py": [],
+        "Hasil_Uji_NIST_SubSampling.bin": [],
+        "nist_data/sipine_threshold_x0123456789_10000_info.txt": [],
+        "nist_data/sipine_threshold_x0123456789_10000.bin": [],
+        "nist_data/sipine_threshold_x0123456789_10000.txt": [],
+        "Tempat_gambar/AI_Key_Report.txt": [],
+        "Tempat_gambar/audio_asli.wav": [],
+        "Tempat_gambar/audio_noise.wav": [],
+        "Tempat_gambar/audio_terdekripsi.wav": [],
+        "Tempat_gambar/audio_terenkripsi.bin": [],
+        "Tempat_gambar/output_terenkripsi.mkv": [],
+        "Tempat_gambar/video_terdekripsi.avi": [],
+        "Tempat_gambar/video_terenkripsi.bin": [],
+        "Tempat_gambar/video_terenkripsi.ven2": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

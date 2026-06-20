@@ -1,0 +1,126 @@
+{
+  "projectRoot": "C:\\Skripsi",
+  "batchFiles": [
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "bifurkasi.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "fix_avi.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Hasil_Uji_NIST_SubSampling.bin",
+      "language": "bin",
+      "sizeLines": 490,
+      "fileCategory": "code"
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000_info.txt",
+      "language": "txt",
+      "sizeLines": 12,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000.bin",
+      "language": "bin",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000.txt",
+      "language": "txt",
+      "sizeLines": 0,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Tempat_gambar/AI_Key_Report.txt",
+      "language": "txt",
+      "sizeLines": 12,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Tempat_gambar/audio_asli.wav",
+      "language": "wav",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/audio_noise.wav",
+      "language": "wav",
+      "sizeLines": 3458,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/audio_terdekripsi.wav",
+      "language": "wav",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/audio_terenkripsi.bin",
+      "language": "bin",
+      "sizeLines": 5502,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/output_terenkripsi.mkv",
+      "language": "mkv",
+      "sizeLines": 19103,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/video_terdekripsi.avi",
+      "language": "avi",
+      "sizeLines": 10169,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/video_terenkripsi.bin",
+      "language": "bin",
+      "sizeLines": 55287,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Tempat_gambar/video_terenkripsi.ven2",
+      "language": "ven2",
+      "sizeLines": 620855,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    "bifurkasi.py": [],
+    "fix_avi.py": [],
+    "Hasil_Uji_NIST_SubSampling.bin": [],
+    "nist_data/sipine_threshold_x0123456789_10000_info.txt": [],
+    "nist_data/sipine_threshold_x0123456789_10000.bin": [],
+    "nist_data/sipine_threshold_x0123456789_10000.txt": [],
+    "Tempat_gambar/AI_Key_Report.txt": [],
+    "Tempat_gambar/audio_asli.wav": [],
+    "Tempat_gambar/audio_noise.wav": [],
+    "Tempat_gambar/audio_terdekripsi.wav": [],
+    "Tempat_gambar/audio_terenkripsi.bin": [],
+    "Tempat_gambar/output_terenkripsi.mkv": [],
+    "Tempat_gambar/video_terdekripsi.avi": [],
+    "Tempat_gambar/video_terenkripsi.bin": [],
+    "Tempat_gambar/video_terenkripsi.ven2": []
+  }
+}

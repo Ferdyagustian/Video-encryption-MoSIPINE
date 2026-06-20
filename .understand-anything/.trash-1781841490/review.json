@@ -1,0 +1,46 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'document:Hasil_Uji_NIST_SubSampling.txt' has no edges (orphan).",
+    "Node 'document:Laporan_Hasil_Uji_NIST.txt' has no edges (orphan).",
+    "Node 'document:hasil nist 100.txt' has no edges (orphan).",
+    "Node 'document:hasiluji.txt' has no edges (orphan).",
+    "Node 'file:.understand-anything/.understandignore' has no edges (orphan).",
+    "Node 'config:.understand-anything/config.json' has no edges (orphan).",
+    "Node 'file:fix_avi.py' has no edges (orphan).",
+    "Node 'file:Hasil_Uji_NIST_SubSampling.bin' has no edges (orphan).",
+    "Node 'document:nist_data/sipine_threshold_x0123456789_10000_info.txt' has no edges (orphan).",
+    "Node 'file:nist_data/sipine_threshold_x0123456789_10000.bin' has no edges (orphan).",
+    "Node 'document:nist_data/sipine_threshold_x0123456789_10000.txt' has no edges (orphan).",
+    "Node 'document:Tempat_gambar/AI_Key_Report.txt' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/audio_asli.wav' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/audio_noise.wav' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/audio_terdekripsi.wav' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/audio_terenkripsi.bin' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/output_terenkripsi.mkv' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/video_terdekripsi.avi' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/video_terenkripsi.bin' has no edges (orphan).",
+    "Node 'file:Tempat_gambar/video_terenkripsi.ven2' has no edges (orphan)."
+  ],
+  "stats": {
+    "totalNodes": 74,
+    "totalEdges": 137,
+    "totalLayers": 5,
+    "tourSteps": 7,
+    "nodeTypes": {
+      "file": 21,
+      "function": 42,
+      "class": 1,
+      "document": 8,
+      "config": 2
+    },
+    "edgeTypes": {
+      "contains": 43,
+      "exports": 43,
+      "imports": 8,
+      "calls": 25,
+      "documents": 9,
+      "configures": 9
+    }
+  }
+}

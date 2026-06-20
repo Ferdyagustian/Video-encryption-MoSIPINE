@@ -1,0 +1,1338 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "audio_core.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 356,
+      "nonEmptyLines": 297,
+      "functions": [
+        {
+          "name": "_get_ffmpeg",
+          "startLine": 30,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "_get_keystream",
+          "startLine": 74,
+          "endLine": 77,
+          "params": [
+            "x1",
+            "x2",
+            "p",
+            "beta",
+            "iter_bakar",
+            "total",
+            "mode_str"
+          ]
+        },
+        {
+          "name": "extract_audio_from_video",
+          "startLine": 84,
+          "endLine": 111,
+          "params": [
+            "video_path",
+            "out_wav_path"
+          ]
+        },
+        {
+          "name": "encrypt_audio",
+          "startLine": 114,
+          "endLine": 165,
+          "params": [
+            "wav_path",
+            "out_bin_path",
+            "mode",
+            "params",
+            "progress_callback"
+          ]
+        },
+        {
+          "name": "decrypt_audio",
+          "startLine": 168,
+          "endLine": 215,
+          "params": [
+            "bin_path",
+            "out_wav_path",
+            "mode",
+            "params",
+            "progress_callback"
+          ]
+        },
+        {
+          "name": "audio_to_noise_wav",
+          "startLine": 218,
+          "endLine": 246,
+          "params": [
+            "bin_path",
+            "out_noise_wav_path"
+          ]
+        },
+        {
+          "name": "mux_video_audio",
+          "startLine": 249,
+          "endLine": 274,
+          "params": [
+            "video_path",
+            "audio_path",
+            "out_path"
+          ]
+        },
+        {
+          "name": "mux_video_audio_lossless",
+          "startLine": 277,
+          "endLine": 303,
+          "params": [
+            "video_path",
+            "audio_path",
+            "out_path"
+          ]
+        },
+        {
+          "name": "demux_video_audio",
+          "startLine": 306,
+          "endLine": 356,
+          "params": [
+            "mp4_path",
+            "out_video_path",
+            "out_audio_bin_path",
+            "mode",
+            "params"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_get_ffmpeg",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "_get_keystream",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "extract_audio_from_video",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "encrypt_audio",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "decrypt_audio",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "audio_to_noise_wav",
+          "line": 218,
+          "isDefault": false
+        },
+        {
+          "name": "mux_video_audio",
+          "line": 249,
+          "isDefault": false
+        },
+        {
+          "name": "mux_video_audio_lossless",
+          "line": 277,
+          "isDefault": false
+        },
+        {
+          "name": "demux_video_audio",
+          "line": 306,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_get_ffmpeg",
+          "callee": "subprocess.run",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_get_ffmpeg",
+          "callee": "os.path.exists",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_get_ffmpeg",
+          "callee": "RuntimeError",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_get_keystream",
+          "callee": "_MODE.get",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_get_keystream",
+          "callee": "generate_keystream_video_np",
+          "lineNumber": 77
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "subprocess.run",
+          "lineNumber": 90
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "_get_ffmpeg",
+          "lineNumber": 92
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "result.stderr.lower",
+          "lineNumber": 105
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "result.stderr.lower",
+          "lineNumber": 105
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "RuntimeError",
+          "lineNumber": 106
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "RuntimeError",
+          "lineNumber": 107
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "os.path.exists",
+          "lineNumber": 110
+        },
+        {
+          "caller": "extract_audio_from_video",
+          "callee": "RuntimeError",
+          "lineNumber": 111
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "wavfile.read",
+          "lineNumber": 122
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "data.astype",
+          "lineNumber": 126
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "data.tobytes",
+          "lineNumber": 132
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "len",
+          "lineNumber": 133
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "float",
+          "lineNumber": 135
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "float",
+          "lineNumber": 136
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "float",
+          "lineNumber": 137
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "params.get",
+          "lineNumber": 137
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "float",
+          "lineNumber": 138
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "_get_keystream",
+          "lineNumber": 141
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "np.frombuffer",
+          "lineNumber": 144
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "open",
+          "lineNumber": 148
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "struct.pack",
+          "lineNumber": 149
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "int",
+          "lineNumber": 156
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "f.write",
+          "lineNumber": 159
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "f.write",
+          "lineNumber": 160
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "cipher_arr.tobytes",
+          "lineNumber": 160
+        },
+        {
+          "caller": "encrypt_audio",
+          "callee": "progress_callback",
+          "lineNumber": 163
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "os.path.exists",
+          "lineNumber": 173
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "FileNotFoundError",
+          "lineNumber": 174
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "open",
+          "lineNumber": 176
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "f.read",
+          "lineNumber": 177
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "ValueError",
+          "lineNumber": 179
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "struct.unpack",
+          "lineNumber": 182
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "ValueError",
+          "lineNumber": 185
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "f.read",
+          "lineNumber": 189
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "float",
+          "lineNumber": 193
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "float",
+          "lineNumber": 194
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "float",
+          "lineNumber": 195
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "params.get",
+          "lineNumber": 195
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "float",
+          "lineNumber": 196
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "_get_keystream",
+          "lineNumber": 199
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "np.frombuffer",
+          "lineNumber": 202
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "plain_arr.view",
+          "lineNumber": 206
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "plain_int16.reshape",
+          "lineNumber": 208
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "wavfile.write",
+          "lineNumber": 210
+        },
+        {
+          "caller": "decrypt_audio",
+          "callee": "progress_callback",
+          "lineNumber": 213
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "os.path.exists",
+          "lineNumber": 224
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "FileNotFoundError",
+          "lineNumber": 225
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "open",
+          "lineNumber": 227
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "f.read",
+          "lineNumber": 228
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "len",
+          "lineNumber": 229
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "ValueError",
+          "lineNumber": 230
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "struct.unpack",
+          "lineNumber": 233
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "f.read",
+          "lineNumber": 235
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "np.frombuffer",
+          "lineNumber": 238
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "cipher_arr.reshape",
+          "lineNumber": 241
+        },
+        {
+          "caller": "audio_to_noise_wav",
+          "callee": "wavfile.write",
+          "lineNumber": 245
+        },
+        {
+          "caller": "mux_video_audio",
+          "callee": "subprocess.run",
+          "lineNumber": 254
+        },
+        {
+          "caller": "mux_video_audio",
+          "callee": "_get_ffmpeg",
+          "lineNumber": 256
+        },
+        {
+          "caller": "mux_video_audio",
+          "callee": "RuntimeError",
+          "lineNumber": 269
+        },
+        {
+          "caller": "mux_video_audio",
+          "callee": "os.path.exists",
+          "lineNumber": 272
+        },
+        {
+          "caller": "mux_video_audio",
+          "callee": "RuntimeError",
+          "lineNumber": 273
+        },
+        {
+          "caller": "mux_video_audio_lossless",
+          "callee": "subprocess.run",
+          "lineNumber": 284
+        },
+        {
+          "caller": "mux_video_audio_lossless",
+          "callee": "_get_ffmpeg",
+          "lineNumber": 286
+        },
+        {
+          "caller": "mux_video_audio_lossless",
+          "callee": "RuntimeError",
+          "lineNumber": 298
+        },
+        {
+          "caller": "mux_video_audio_lossless",
+          "callee": "os.path.exists",
+          "lineNumber": 301
+        },
+        {
+          "caller": "mux_video_audio_lossless",
+          "callee": "RuntimeError",
+          "lineNumber": 302
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "subprocess.run",
+          "lineNumber": 317
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "_get_ffmpeg",
+          "lineNumber": 319
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "RuntimeError",
+          "lineNumber": 328
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "out_audio_bin_path.replace",
+          "lineNumber": 331
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "subprocess.run",
+          "lineNumber": 332
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "_get_ffmpeg",
+          "lineNumber": 334
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "RuntimeError",
+          "lineNumber": 344
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "encrypt_audio",
+          "lineNumber": 348
+        },
+        {
+          "caller": "demux_video_audio",
+          "callee": "os.remove",
+          "lineNumber": 352
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "generator_nist.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 209,
+      "nonEmptyLines": 176,
+      "functions": [
+        {
+          "name": "hitung_progress",
+          "startLine": 29,
+          "endLine": 38,
+          "params": [
+            "current",
+            "total",
+            "waktu_mulai"
+          ]
+        },
+        {
+          "name": "validasi_entropy_awal",
+          "startLine": 41,
+          "endLine": 64,
+          "params": [
+            "x0",
+            "p",
+            "beta",
+            "n"
+          ]
+        },
+        {
+          "name": "hitung_statistik_bitstream",
+          "startLine": 67,
+          "endLine": 107,
+          "params": [
+            "arr_bytes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "hitung_progress",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "validasi_entropy_awal",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "hitung_statistik_bitstream",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hitung_progress",
+          "callee": "int",
+          "lineNumber": 33
+        },
+        {
+          "caller": "hitung_progress",
+          "callee": "time.time",
+          "lineNumber": 35
+        },
+        {
+          "caller": "hitung_progress",
+          "callee": "sys.stdout.write",
+          "lineNumber": 37
+        },
+        {
+          "caller": "hitung_progress",
+          "callee": "sys.stdout.flush",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validasi_entropy_awal",
+          "callee": "range",
+          "lineNumber": 52
+        },
+        {
+          "caller": "validasi_entropy_awal",
+          "callee": "sine_pwlcm_map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "validasi_entropy_awal",
+          "callee": "range",
+          "lineNumber": 55
+        },
+        {
+          "caller": "validasi_entropy_awal",
+          "callee": "sine_pwlcm_map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "validasi_entropy_awal",
+          "callee": "sine_pwlcm_map",
+          "lineNumber": 57
+        },
+        {
+          "caller": "validasi_entropy_awal",
+          "callee": "abs",
+          "lineNumber": 58
+        },
+        {
+          "caller": "validasi_entropy_awal",
+          "callee": "np.log",
+          "lineNumber": 60
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "np.unpackbits",
+          "lineNumber": 73
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "len",
+          "lineNumber": 74
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "int",
+          "lineNumber": 75
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "bits.sum",
+          "lineNumber": 75
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "np.log2",
+          "lineNumber": 83
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "np.log2",
+          "lineNumber": 85
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "min",
+          "lineNumber": 88
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "bits[:sample_size].astype",
+          "lineNumber": 89
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "b_f.mean",
+          "lineNumber": 90
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "np.var",
+          "lineNumber": 91
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "float",
+          "lineNumber": 93
+        },
+        {
+          "caller": "hitung_statistik_bitstream",
+          "callee": "np.correlate",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lyapunov.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sipine.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 265,
+      "nonEmptyLines": 213,
+      "functions": [
+        {
+          "name": "_sine_pwlcm_step",
+          "startLine": 11,
+          "endLine": 25,
+          "params": [
+            "x",
+            "p",
+            "beta"
+          ]
+        },
+        {
+          "name": "_sine_only_step",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "x",
+            "beta"
+          ]
+        },
+        {
+          "name": "_pwlcm_only_step",
+          "startLine": 35,
+          "endLine": 50,
+          "params": [
+            "x",
+            "p"
+          ]
+        },
+        {
+          "name": "_generate_keystream_core",
+          "startLine": 54,
+          "endLine": 114,
+          "params": [
+            "x1",
+            "x2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ]
+        },
+        {
+          "name": "_generate_keystream_video",
+          "startLine": 118,
+          "endLine": 175,
+          "params": [
+            "x1",
+            "x2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ]
+        },
+        {
+          "name": "sine_pwlcm_map",
+          "startLine": 184,
+          "endLine": 186,
+          "params": [
+            "x",
+            "p",
+            "beta"
+          ]
+        },
+        {
+          "name": "generate_keystream",
+          "startLine": 189,
+          "endLine": 191,
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total"
+          ]
+        },
+        {
+          "name": "generate_keystream_sine_only",
+          "startLine": 194,
+          "endLine": 196,
+          "params": [
+            "x0_1",
+            "x0_2",
+            "beta",
+            "iter_awal",
+            "total"
+          ]
+        },
+        {
+          "name": "generate_keystream_pwlcm_only",
+          "startLine": 199,
+          "endLine": 201,
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total"
+          ]
+        },
+        {
+          "name": "generate_keystream_np",
+          "startLine": 205,
+          "endLine": 209,
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ]
+        },
+        {
+          "name": "generate_keystream_video_np",
+          "startLine": 212,
+          "endLine": 217,
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ]
+        },
+        {
+          "name": "_warmup",
+          "startLine": 225,
+          "endLine": 233,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_sine_pwlcm_step",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "_sine_only_step",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "_pwlcm_only_step",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "_generate_keystream_core",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "_generate_keystream_video",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "sine_pwlcm_map",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "generate_keystream",
+          "line": 189,
+          "isDefault": false
+        },
+        {
+          "name": "generate_keystream_sine_only",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "generate_keystream_pwlcm_only",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "generate_keystream_np",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "generate_keystream_video_np",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "_warmup",
+          "line": 225,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_sine_pwlcm_step",
+          "callee": "math.sin",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_sine_only_step",
+          "callee": "math.sin",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "np.empty",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "range",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_only_step",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_only_step",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "np.uint8",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "range",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "range",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_only_step",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_only_step",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_only_step",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_sine_only_step",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "int",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "int",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_generate_keystream_core",
+          "callee": "np.uint8",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "np.empty",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "range",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_only_step",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_only_step",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "np.uint8",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "range",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "range",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_only_step",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_only_step",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_only_step",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_sine_only_step",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "_pwlcm_only_step",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "int",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "int",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_generate_keystream_video",
+          "callee": "np.uint8",
+          "lineNumber": 172
+        },
+        {
+          "caller": "sine_pwlcm_map",
+          "callee": "_sine_pwlcm_step",
+          "lineNumber": 186
+        },
+        {
+          "caller": "generate_keystream",
+          "callee": "_generate_keystream_core(x0_1, x0_2, p, beta, iter_awal, total, 0).tolist",
+          "lineNumber": 191
+        },
+        {
+          "caller": "generate_keystream",
+          "callee": "_generate_keystream_core",
+          "lineNumber": 191
+        },
+        {
+          "caller": "generate_keystream_sine_only",
+          "callee": "_generate_keystream_core(x0_1, x0_2, 0.25, beta, iter_awal, total, 1).tolist",
+          "lineNumber": 196
+        },
+        {
+          "caller": "generate_keystream_sine_only",
+          "callee": "_generate_keystream_core",
+          "lineNumber": 196
+        },
+        {
+          "caller": "generate_keystream_pwlcm_only",
+          "callee": "_generate_keystream_core(x0_1, x0_2, p, beta, iter_awal, total, 2).tolist",
+          "lineNumber": 201
+        },
+        {
+          "caller": "generate_keystream_pwlcm_only",
+          "callee": "_generate_keystream_core",
+          "lineNumber": 201
+        },
+        {
+          "caller": "generate_keystream_np",
+          "callee": "_generate_keystream_core",
+          "lineNumber": 209
+        },
+        {
+          "caller": "generate_keystream_video_np",
+          "callee": "_generate_keystream_video",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_warmup",
+          "callee": "print",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_warmup",
+          "callee": "_generate_keystream_core",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_warmup",
+          "callee": "_generate_keystream_core",
+          "lineNumber": 228
+        },
+        {
+          "caller": "_warmup",
+          "callee": "_generate_keystream_core",
+          "lineNumber": 229
+        },
+        {
+          "caller": "_warmup",
+          "callee": "_generate_keystream_video",
+          "lineNumber": 230
+        },
+        {
+          "caller": "_warmup",
+          "callee": "_generate_keystream_video",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_warmup",
+          "callee": "_generate_keystream_video",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_warmup",
+          "callee": "print",
+          "lineNumber": 233
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    }
+  ]
+}

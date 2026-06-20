@@ -1,0 +1,49 @@
+{
+  "projectRoot": "C:\\Skripsi",
+  "batchFiles": [
+    {
+      "path": "DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "language": "txt",
+      "sizeLines": 607,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Hasil_Uji_NIST_SubSampling.txt",
+      "language": "txt",
+      "sizeLines": 0,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Laporan_Hasil_Uji_NIST.txt",
+      "language": "txt",
+      "sizeLines": 28,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "hasil nist 100.txt",
+      "language": "txt",
+      "sizeLines": 42,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "hasiluji.txt",
+      "language": "txt",
+      "sizeLines": 51,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "pyrightconfig.json",
+      "language": "json",
+      "sizeLines": 10,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "DOKUMENTASI_SISTEM_MO_SIPINE.txt": [],
+    "Hasil_Uji_NIST_SubSampling.txt": [],
+    "Laporan_Hasil_Uji_NIST.txt": [],
+    "hasil nist 100.txt": [],
+    "hasiluji.txt": [],
+    "pyrightconfig.json": []
+  }
+}

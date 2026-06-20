@@ -1,0 +1,204 @@
+{
+  "nodes": [
+    {
+      "id": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "type": "document",
+      "name": "DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "filePath": "DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "summary": "Dokumentasi komprehensif sistem kriptografi MO-SiPINE, arsitektur file, rumus, dan panduan penggunaan.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:Hasil_Uji_NIST_SubSampling.txt",
+      "type": "document",
+      "name": "Hasil_Uji_NIST_SubSampling.txt",
+      "filePath": "Hasil_Uji_NIST_SubSampling.txt",
+      "summary": "Berkas teks hasil simulasi uji NIST.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:Laporan_Hasil_Uji_NIST.txt",
+      "type": "document",
+      "name": "Laporan_Hasil_Uji_NIST.txt",
+      "filePath": "Laporan_Hasil_Uji_NIST.txt",
+      "summary": "Laporan statistik hasil pengujian acak menggunakan paket uji NIST SP 800-22.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:hasil nist 100.txt",
+      "type": "document",
+      "name": "hasil nist 100.txt",
+      "filePath": "hasil nist 100.txt",
+      "summary": "Catatan log hasil uji NIST dengan 100 iterasi.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:hasiluji.txt",
+      "type": "document",
+      "name": "hasiluji.txt",
+      "filePath": "hasiluji.txt",
+      "summary": "Catatan log hasil evaluasi performa dan kualitas enkripsi sistem.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pyrightconfig.json",
+      "type": "config",
+      "name": "pyrightconfig.json",
+      "filePath": "pyrightconfig.json",
+      "summary": "Konfigurasi statis untuk analisis tipe Python menggunakan Pyright.",
+      "tags": [
+        "kriptografi-chaos",
+        "config"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:sipine.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:video_core.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:audio_core.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:ai_optimizer.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:gui_video.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:gui_video_main.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:generator_nist.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:bifurkasi.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "target": "file:lyapunov.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:sipine.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:video_core.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:audio_core.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:ai_optimizer.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:gui_video.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:gui_video_main.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:generator_nist.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:bifurkasi.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyrightconfig.json",
+      "target": "file:lyapunov.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

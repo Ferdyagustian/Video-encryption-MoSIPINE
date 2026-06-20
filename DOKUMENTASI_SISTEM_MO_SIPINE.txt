@@ -1,0 +1,607 @@
+================================================================================
+  DOKUMENTASI LENGKAP SISTEM KRIPTOGRAFI VIDEO & AUDIO
+  BERBASIS MODULO SINE-PWLCM (MO-SiPINE)
+  Tanggal Terakhir Diperbarui: 17 Mei 2026
+================================================================================
+
+DAFTAR ISI:
+  1. Arsitektur Sistem & Daftar File
+  2. sipine.py — Inti Algoritma Chaotic Map
+  3. ai_optimizer.py — Pencarian Kunci Optimal
+  4. video_core.py — Enkripsi/Dekripsi Video+Audio
+  5. audio_core.py — Enkripsi/Dekripsi Audio Standalone
+  6. gui_video_main.py — Entry Point GUI Utama
+  7. gui_video.py — Seluruh Modul GUI & Uji Kualitas
+  8. generator_nist.py — Generator Bitstream untuk NIST SP 800-22
+  9. bifurkasi.py — Diagram Bifurkasi
+ 10. lyapunov.py — Eksponen Lyapunov
+ 11. Alur Kerja Pengguna (Workflow)
+ 12. Format File biner Kustom
+ 13. Metrik Evaluasi & Rumus
+ 14. Catatan Teknis Penting
+
+================================================================================
+1. ARSITEKTUR SISTEM & DAFTAR FILE
+================================================================================
+
+Sistem ini adalah aplikasi desktop kriptografi video dan audio berbasis
+peta chaos (chaotic map) dengan antarmuka GUI Tkinter. Sistem menggunakan
+operasi XOR antara data multimedia dan keystream pseudo-random yang
+dibangkitkan oleh peta chaos Modulo Sine-PWLCM.
+
+Struktur File Utama:
+  sipine.py          — Inti algoritma chaos (Numba JIT-compiled)
+  ai_optimizer.py    — Pencarian kunci optimal (Random Search + Lyapunov)
+  video_core.py      — Backend enkripsi/dekripsi video+audio terpadu
+  audio_core.py      — Backend enkripsi/dekripsi audio WAV standalone
+  gui_video_main.py  — Entry point GUI utama (main window)
+  gui_video.py       — Seluruh modul GUI: enkripsi, dekripsi, uji kualitas
+  generator_nist.py  — Generator bitstream 1 Megabit untuk uji NIST STS
+  bifurkasi.py       — Skrip visualisasi diagram bifurkasi
+  lyapunov.py        — Skrip visualisasi eksponen Lyapunov
+  fix_avi.py         — Skrip utilitas untuk migrasi format dari .avi ke .mp4
+
+Direktori & File Pendukung:
+  Tempat_gambar/     — Direktori cache untuk ekstraksi key-frame dan hasil plot sementara
+  nist_data/         — Direktori penyimpanan metadata uji NIST
+  Hasil_Uji_NIST_SubSampling.txt/bin — Berkas bitstream output hasil uji NIST
+  Laporan_Hasil_Uji_NIST.txt         — Laporan statistik output NIST
+  hasil nist 100.txt, hasiluji.txt   — Laporan/log evaluasi dari berbagai sesi uji
+
+Dependensi Utama:
+  numpy, numba, scipy, opencv-python (cv2), Pillow (PIL), matplotlib,
+  scikit-image, tkinter (bawaan Python), ffmpeg (eksternal, untuk audio)
+
+================================================================================
+2. sipine.py — INTI ALGORITMA CHAOTIC MAP
+================================================================================
+
+File ini berisi implementasi inti pembangkit keystream chaos yang
+dikompilasi menggunakan Numba JIT untuk performa tinggi (50-100x lebih
+cepat dari pure Python). TIDAK BOLEH DIMODIFIKASI.
+
+2.1 PETA CHAOS YANG TERSEDIA (3 MODE):
+
+  Mode 0 — MO-SiPINE (Modulo Sine-PWLCM, default):
+    Komposisi dari Piecewise Linear Chaotic Map (PWLCM) dan fungsi Sine.
+    Rumus: x_{n+1} = (beta * sin(pi * F_PWLCM(x_n)) * 987676766.3232) mod 1.0
+    dimana F_PWLCM adalah:
+      Jika x >= 0.5 → evaluasi (1-x)
+      Jika 0 <= x < p → f(x) = x/p
+      Jika p <= x < 0.5 → f(x) = (x-p)/(0.5-p)
+
+  Mode 1 — Sine Only:
+    x_{n+1} = (beta * sin(pi * x_n) * 987676766.3232) mod 1.0
+
+  Mode 2 — PWLCM Only:
+    x_{n+1} = (F_PWLCM(x_n) * 987676766.3232) mod 1.0
+
+2.2 MEKANISME PEMBANGKITAN KEYSTREAM:
+
+  Parameter Input: x1 (kondisi awal 1), x2 (kondisi awal 2),
+                   p (parameter PWLCM), beta (parameter Sine),
+                   iter_awal (iterasi pemanasan), total (jumlah byte)
+
+  Proses per-byte keystream:
+    1. Fase Pemanasan: Iterasi iter_awal kali tanpa menghasilkan output
+       (membuang transient awal agar sistem masuk ke rezim chaotik stabil)
+    2. Sub-Sampling (N_SKIP iterasi dibuang per byte output):
+       - Versi standar (_generate_keystream_core): N_SKIP = 12
+       - Versi video (_generate_keystream_video): N_SKIP = 4
+    3. Injeksi Umpan Balik (Feedback Injection):
+       x1 = (x1 + k_prev/256) mod 1.0
+       x2 = (x2 + x1) mod 1.0
+    4. Evolusi terakhir sebelum ekstraksi byte
+    5. Cascade XOR Folding — konversi float64 → uint8:
+       val = int(x * 2^32)
+       k = (val>>24 & 0xFF) ^ (val>>16 & 0xFF) ^ (val>>8 & 0xFF) ^ (val & 0xFF)
+       Dilakukan untuk x1 DAN x2, lalu di-XOR: k_final = k1 ^ k2
+
+  Fungsi Publik API:
+    generate_keystream(x1,x2,p,beta,iter,total) → list[int] (mode MO-SiPINE)
+    generate_keystream_sine_only(...)            → list[int] (mode Sine)
+    generate_keystream_pwlcm_only(...)           → list[int] (mode PWLCM)
+    generate_keystream_np(...)      → numpy uint8 array (standar, N_SKIP=12)
+    generate_keystream_video_np(...) → numpy uint8 array (video, N_SKIP=4)
+
+  Warmup: Saat modul pertama kali diimpor, fungsi _warmup() dipanggil
+  otomatis untuk mengkompilasi semua varian Numba JIT sehingga tidak ada
+  jeda saat pengguna pertama kali menekan tombol enkripsi.
+
+================================================================================
+3. ai_optimizer.py — PENCARIAN KUNCI OPTIMAL
+================================================================================
+
+Modul ini menggunakan Heuristic Search dengan Narrowing Refinement untuk
+mencari parameter kunci chaos (x1, x2, p, beta) yang menghasilkan Shannon
+Entropy keystream tertinggi (mendekati 8.0 bit = keacakan sempurna).
+
+Versi saat ini: AI Optimizer v2.
+
+3.1 ALUR KERJA (v2 — Heuristic Search + Narrowing Refinement):
+  1. Generate kandidat acak: x1,x2 ∈ (0,1), p ∈ (0,0.5), beta ∈ (0.7,1.0)
+  2. Filter Lyapunov: Hitung eksponen Lyapunov estimasi (n=300 iterasi, lebih
+     akurat dari sebelumnya). Hanya kandidat dengan Lyapunov > 0 (chaotik)
+     yang dievaluasi lebih lanjut.
+  3. Bangkitkan keystream sampel (50.000 byte) dan hitung Shannon Entropy.
+     (sample lebih besar dari sebelumnya agar estimasi entropy lebih stabil)
+  4. Jika entropy meningkat → simpan kandidat terbaik, beralih ke Fase Lokal
+     (Narrowing Refinement: perturbasi Gaussian dengan std=0.05 di sekitar
+     kandidat terbaik untuk konvergensi lebih cepat).
+  5. Jika _REFINE_INTERVAL=10 iterasi berturut-turut tidak ada peningkatan,
+     kembali ke Fase Global (random search penuh).
+  6. Early exit jika entropy >= 7.999.
+  7. Timeout default: 10 detik.
+
+3.2 KONSTANTA KONFIGURASI:
+  _REFINE_STD      = 0.05   — Standar deviasi Gaussian saat fase lokal
+  _REFINE_INTERVAL = 10     — Jumlah iterasi gagal sebelum restart global
+
+3.3 FUNGSI UTAMA:
+  predict_best_keys(mode, timeout, sample_size) → (best_keys: dict, entropy: float)
+  calculate_entropy(data) → float (Shannon Entropy menggunakan np.bincount)
+  _lyapunov_estimate(x0, p, beta, n=300) → float (estimasi eksponen Lyapunov)
+  _perturb_near(best_keys, mode) → tuple (Gaussian perturbation narrowing)
+
+================================================================================
+4. video_core.py — ENKRIPSI/DEKRIPSI VIDEO+AUDIO
+================================================================================
+
+Backend untuk memproses video dan audio secara terpadu dalam satu file
+VEN2 (.bin) dengan header kustom VEN2 (memiliki IV).
+
+4.1 ENKRIPSI (encrypt_video_audio_to_VEN2):
+  Input: file video (.mp4/.avi/.mov/.mkv)
+  Output: file biner terpadu (.bin)
+
+  Proses:
+    1. Buka video dengan OpenCV, baca metadata (width, height, fps, total_frames)
+    2. Ekstrak audio ke WAV menggunakan ffmpeg (jika ada stream audio)
+    3. Bangkitkan angka acak 4-byte (IV) untuk mitigasi Two-Time Pad.
+    4. Tulis header VEN2 36 byte (termasuk IV) ke file output
+    5. Enkripsi video frame-per-frame:
+       - Kunci video disuntik dengan modifikasi IV.
+       - Baca frame → flatten ke 1D array
+       - Bangkitkan keystream sepanjang width*height*3 byte
+       - XOR: cipher = plaintext ^ keystream
+       - Tulis cipher ke file
+       - State Chaining antar-frame:
+         x1 = (x1 + 0.0019) mod 1.0
+         x2 = (x2 + 0.0073) mod 1.0
+         iter_bakar: 1000 (frame pertama) → 10 (frame selanjutnya)
+    6. Enkripsi audio (jika ada):
+       - Hitung parameter kunci baru menggunakan kebalikan IV (pemisahan domain).
+       - Bangkitkan keystream audio secara independen dari jumlah frame video.
+       - XOR seluruh byte audio dengan keystream audio.
+       - Tulis cipher audio ke akhir file
+
+4.2 DEKRIPSI (decrypt_VEN2_to_video_audio):
+  Input: file .bin terenkripsi + kunci parameter yang sama
+  Output: file video .mp4 (+ audio jika ada)
+
+  Proses identik dengan enkripsi (XOR simetris):
+    1. Baca header dari file biner. Harus berupa header VEN2 (36 byte).
+    2. Ekstrak IV dan siapkan parameter kunci terpisah untuk video dan audio.
+    3. Dekripsi video frame-per-frame (XOR dengan keystream video yang sama)
+    4. Tulis frame langsung ke proses FFmpeg via stdin (LOSSLESS)
+    5. Dekripsi audio (XOR dengan keystream audio) → simpan WAV → mux via ffmpeg
+
+  Codec Output (LOSSLESS):
+    Sistem menggunakan FFmpeg dengan encoder libx264rgb (jika tersedia) atau
+    libx264 + yuv444p sebagai fallback. Kedua opsi ini bersifat lossless,
+    sehingga MSE antara video asli dan terdekripsi = 0.0 dan PSNR = infinity.
+    Ini membuktikan secara matematis bahwa algoritma kriptografi MO-SiPINE
+    bersifat bit-perfect (reversible sempurna).
+
+4.3 FUNGSI PENDUKUNG:
+  export_bin_to_noise_video() — Ekspor .bin langsung ke .mp4 noise (tanpa dekripsi,
+                                menggunakan FFmpeg lossless libx264rgb)
+  decrypt_VEN2_to_video()    — Fungsi fallback lama (format non-VEN2, FFmpeg lossless)
+  extract_sample_frames()     — Ekstrak 3 frame sampel (10%, 50%, 90%)
+  extract_single_frame_from_bin() — Ekstrak 1 frame dari .bin berdasarkan rasio posisi
+
+================================================================================
+5. audio_core.py — ENKRIPSI/DEKRIPSI AUDIO STANDALONE
+================================================================================
+
+Backend untuk enkripsi/dekripsi file audio WAV secara mandiri.
+
+5.1 FORMAT FILE:
+  Header AUENC (24 byte):
+    [Magic "AUENC" 5B][SampleRate 4B][Channels 2B][NumSamples 4B]
+    [BitDepth 2B][StereoFlag 2B][Padding 5B]
+
+5.2 PROSES ENKRIPSI (encrypt_audio):
+  1. Baca WAV → normalize ke int16
+  2. Flatten ke byte array
+  3. Bangkitkan keystream (iter_bakar=1000)
+  4. XOR: cipher = raw_bytes ^ keystream
+  5. Tulis header + cipher ke .bin
+
+5.3 PROSES DEKRIPSI (decrypt_audio):
+  Identik dengan enkripsi (XOR simetris). Baca .bin → XOR → simpan WAV.
+
+5.4 FUNGSI PENDUKUNG:
+  extract_audio_from_video()    — Ekstrak audio dari video via ffmpeg (PCM 16-bit, 44100 Hz)
+  audio_to_noise_wav()          — Konversi cipher .bin audio ke WAV noise
+  mux_video_audio()             — Gabung video+audio via ffmpeg (codec AAC)
+  mux_video_audio_lossless()    — Gabung video+audio via ffmpeg (codec FLAC, lossless)
+  demux_video_audio()           — Pisahkan video dan audio dari file terenkripsi
+
+================================================================================
+6. gui_video_main.py — ENTRY POINT GUI UTAMA
+================================================================================
+
+File ini adalah titik masuk aplikasi. Menjalankan `python gui_video_main.py`
+akan membuka window utama.
+
+6.1 STRUKTUR WINDOW UTAMA (480x700 px):
+  - Judul: "SIP Map — Video Encryptor"
+  - Status Bar: Menampilkan file video yang aktif
+  - Seksi "Video & AI":
+      Tombol "Enkripsi Video" → memanggil pencet6()
+      Tombol "Dekripsi Video" → memanggil pencet7()
+  - Seksi "Uji Kualitas":
+      Tombol "Uji Kualitas (Histogram & Korelasi)"
+      Tombol "Uji Distribusi Korelasi" (scatter plot)
+      Tombol "Uji Statistik (Uniform, Entropi, dll)"
+      Tombol "Uji Kualitas Audio (SNR, PSNR, Waveform)"
+  - Tombol "Keluar"
+
+6.2 SESSION STATE:
+  Dictionary global SESSION menyimpan state sesi:
+    video_asli, video_bin, kunci, mode
+
+================================================================================
+7. gui_video.py — SELURUH MODUL GUI & UJI KUALITAS
+================================================================================
+
+File terbesar (~95 KB, ~1925 baris). Berisi seluruh logika GUI untuk
+enkripsi, dekripsi, pengujian kualitas, serta kelas VideoPlayer.
+
+7.0 KELAS VIDEOPLAYER & PLACEHOLDER:
+  VideoPlayer(parent_frame, preview_size) — Mengelola pemutaran Video (.mp4)
+  atau VEN2 (.bin) di Tkinter secara aman dalam thread terpisah.
+  _create_placeholder() — Membuat gambar dummy abu-abu untuk default display.
+
+7.1 MODUL ENKRIPSI VIDEO (pencet6):
+  - Window size: 900×750 px
+  - Pilih file video input
+  - Pilih mode enkripsi melalui radio button:
+      Label "SIP Map" → nilai "mosipine" (MO-SiPINE, default)
+      Label "Sine Only" → nilai "sine"
+      Label "PWLCM Only" → nilai "pwlcm"
+    (Catatan: label "SIP Map" digunakan di UI, namun secara internal
+    menggunakan mode string "mosipine" yang sama dengan mode default.)
+  - Pilih mode input parameter:
+      Otomatis (AI Predictor): AI Heuristic Search v2 + Narrowing Refinement
+        + Lyapunov filter (n=300) mencari kunci optimal selama 10 detik,
+        menggunakan 50.000 byte sampel untuk estimasi entropy yang stabil.
+      Manual: Pengguna menginput nilai x1, x2, p, beta secara langsung.
+        Saat tombol enkripsi ditekan, sistem akan menghitung skor entropi
+        dari parameter manual (menggunakan 10.000 byte sampel keystream)
+        dan menampilkannya di field "Entropi Info" sebelum proses dimulai.
+  - Enkripsi via encrypt_video_audio_to_VEN2()
+  - Tampilkan progress bar, ETA, FPS, dan Throughput (MB/s)
+  - Simpan Key Report (.txt) — untuk AI: header "AI KEY REPORT";
+    untuk Manual: header "MANUAL KEY REPORT" (keduanya disimpan di
+    Tempat_gambar/AI_Key_Report.txt dan dapat di-copy via tombol Simpan)
+  - Simpan file output .bin (via tombol Unduh File Terenkripsi)
+  - Tombol Export Preview Noise (.mp4) — mengekspor cipher byte langsung
+    ke video .mp4 noise (tanpa dekripsi, menggunakan FFmpeg lossless)
+
+7.2 MODUL DEKRIPSI VIDEO (pencet7):
+  - Window size: 800×670 px
+  - Pilih file .bin terenkripsi
+  - Input kunci parameter (x1, x2, p, beta) dan mode enkripsi
+  - Tombol "Muat Otomatis Dari AI_Key_Report.txt" — parse file kunci dan
+    isi semua field (x1, x2, p, beta, mode) secara otomatis
+  - Dekripsi via decrypt_VEN2_to_video_audio()
+  - Tampilkan progress bar, ETA, FPS, dan Throughput (MB/s)
+  - Tombol Unduh Video (.mp4) — simpan hasil dekripsi ke lokasi pilihan
+
+7.3 MODUL UJI HISTOGRAM & KORELASI (uji_histogram_korelasi_video):
+  Window Pilih File: 1020×560 px
+  Input: 2 file (Citra 1 dan Citra 2), masing-masing diekstrak 10 key-frame
+  Output Window (1600×1000 px):
+    - Histogram RGB untuk kedua citra (bins=256, range 0-255)
+    - Tabel korelasi spasial Pearson (Horizontal, Vertikal, Diagonal)
+      untuk R, G, B per citra (rata-rata 10 frame)
+    - Nilai MSE dan PSNR
+  Catatan: Menggunakan PIL.Image.NEAREST untuk resize ke (320×240)
+  (bukan LANCZOS) agar distribusi pixel cipher tidak diinterpolasi
+  secara artifisial. LANCZOS akan menyebabkan entropy turun dari ~8.0
+  ke ~6.3 secara palsu.
+
+7.4 MODUL UJI DISTRIBUSI KORELASI / SCATTER PLOT (uji_distribusi_scatter_video):
+  Window Pilih File: 560×480 px
+  Input: 1 file video/bin/citra (diambil 3 frame pada 10%, 50%, 90%)
+  Output Window (1000×870 px):
+    - Grid 3×3 scatter plot: R/G/B × Horizontal/Vertikal/Diagonal
+    - Setiap scatter memplot SELURUH piksel frame penuh (tanpa subsampling)
+    - Parameter: s=5.0, alpha=1.0 → full block solid tanpa spot putih
+    - Ciphertext ideal: scatter tersebar merata di seluruh area 256×256
+    - Plaintext ideal: scatter membentuk garis diagonal (korelasi tinggi)
+
+7.5 MODUL UJI STATISTIK (uji_statistik_video):
+  Window Pilih File: 1020×560 px
+  Input: 2 file (Citra 1 dan Citra 2), masing-masing diekstrak 10 key-frame
+  Output Window (960×400 px): Tabel metrik (rata-rata 10 key-frame):
+    - NPCR (%) — Number of Pixels Change Rate. Ideal >= 99.6%
+    - UACI (%) — Unified Average Changing Intensity. Ideal ≈ 33.4%
+    - Entropi (rata-rata 3 channel) — Shannon Entropy. Ideal = 8.0
+    - Korelasi Temporal — Pearson antar frame t dan t+1. Ideal ≈ 0.0 (cipher)
+    - Chi-Square R/G/B — Uji distribusi seragam per channel
+  Catatan: NPCR dan UACI dihitung berpasangan (Citra 1 vs Citra 2),
+  sedangkan Entropi dan Chi-Square dihitung per citra secara independen.
+
+7.6 MODUL UJI KUALITAS AUDIO (uji_kualitas_audio):
+  Input: 3 file WAV (asli, noise/terenkripsi, terdekripsi)
+  Output: SNR, PSNR, waveform, FFT, dan tabel statistik audio
+
+7.7 MODUL ENKRIPSI AUDIO STANDALONE (enkripsi_audio_standalone):
+  Window size: 600×560 px
+  Input: File Audio (.wav)
+  Output: File Audio Terenkripsi (.bin)
+  Proses: Memungkinkan enkripsi langsung file WAV secara mandiri dengan
+    mode SIP Map (mosipine), Sine Only, atau PWLCM Only. Dapat memuat
+    kunci dari AI_Key_Report.txt otomatis.
+    (Label di UI: "SIP Map" untuk mode mosipine)
+
+7.8 MODUL DEKRIPSI AUDIO STANDALONE (dekripsi_audio_standalone):
+  Input: File Audio Terenkripsi (.bin)
+  Output: File Audio Terdekripsi (.wav)
+  Proses: Membaca file bin dan parameter kunci untuk mendekripsi kembali
+    ke file WAV asli dengan akurasi bit-perfect.
+
+7.9 FUNGSI HELPER METRIK (tidak boleh diubah rumusnya):
+  _ujiuniform_v(arr)     — Chi-Square goodness-of-fit test
+  _uaci_v(arr1, arr2)    — UACI per channel RGB
+  _npcr_v(arr1, arr2)    — NPCR per channel RGB
+  _pearson_v(ch2d, dir)  — Korelasi spasial Pearson (hor/ver/dia)
+  _pearson_temporal(a,b)  — Korelasi temporal antar frame berurutan
+  _psnr_mse_v(arr1,arr2) — PSNR dan MSE
+  _entropy_v(ch_flat)    — Shannon Entropy (via skimage)
+
+7.10 FUNGSI HELPER EKSTRAKSI & GUI:
+  _extract_3_frames(fp, slot, parent) — Ekstrak 3 frame (10%, 50%, 90%)
+    Digunakan oleh modul scatter plot.
+  _extract_key_frames(fp, slot, parent, n_frames=10) — Ekstrak 10 pasang
+    frame (t dan t+1) secara dinamis. Digunakan oleh modul histogram
+    dan statistik. Return: list of tuple(path_t, path_t+1).
+  _make_slot_2img(parent, slot, title, data, ...) — Komponen antarmuka yang
+    membentuk slot input untuk 2 citra komparatif.
+  _detect_type(fp) — Deteksi apakah path adalah Video, Bin, atau Citra.
+  _prompt_and_extract_frames(parent) — Ekstrak frame acak via popup input.
+
+================================================================================
+8. generator_nist.py — GENERATOR BITSTREAM UNTUK NIST SP 800-22
+================================================================================
+
+Skrip mandiri untuk membangkitkan bitstream 1 Megabit (125.000 byte)
+yang dapat diuji dengan software NIST Statistical Test Suite.
+
+Proses:
+  1. Validasi Lyapunov (harus > 0)
+  2. Bangkitkan keystream 125.000 byte via generate_keystream_video_np
+     (N_SKIP=4, konsisten dengan enkripsi video aktual)
+  3. Simpan ke .txt (string '0'/'1') dan .bin (raw bytes)
+  4. Hitung statistik: rasio bit 0/1, Shannon Entropy, Autocorrelation lag-1
+
+Parameter Default:
+  x1=0.123456789, x2=0.987654321, p=0.3678, beta=0.99, iter_buang=1000
+
+Fungsi Utama:
+  validasi_entropy_awal() — Cek kondisi awal sebelum bangkitkan stream masif.
+  hitung_statistik_bitstream() — Mengevaluasi rasio 0/1, entropy, autokorelasi.
+  hitung_progress() — Utility untuk menampilkan persentase terminal dan sisa waktu.
+
+================================================================================
+9. bifurkasi.py — DIAGRAM BIFURKASI
+================================================================================
+
+Skrip visualisasi diagram bifurkasi peta Modulo Sine-PWLCM terhadap
+parameter p. Mengiterasi x melalui fungsi chaos dan memplot nilai x_n
+terhadap variasi p ∈ [0.01, 0.49].
+
+Parameter: x0=0.123456, beta=0.77, iterasi_buang=2000, iterasi_plot=1500
+
+Fungsi Utama:
+  sine_pwlcm_map(x, p, beta) — Persamaan dasar yang divisualisasikan.
+
+================================================================================
+10. lyapunov.py — EKSPONEN LYAPUNOV
+================================================================================
+
+Skrip visualisasi eksponen Lyapunov peta Modulo Sine-PWLCM terhadap
+parameter p menggunakan metode turunan numerik (finite-difference).
+
+Eksponen Lyapunov > 0 → sistem bersifat chaotik (sensitif terhadap
+kondisi awal). Diplot sebagai fungsi dari p ∈ [0.01, 0.49].
+
+================================================================================
+11. ALUR KERJA PENGGUNA (WORKFLOW)
+================================================================================
+
+A. ENKRIPSI VIDEO:
+   1. Jalankan gui_video_main.py → klik "Enkripsi Video"
+   2. Pilih file video input (.mp4/.avi/.mov/.mkv)
+   3. Pilih mode enkripsi (MO-SiPINE / Sine / PWLCM)
+   4. AI Optimizer mencari kunci optimal (10 detik)
+   5. Sistem mengenkripsi video+audio → menghasilkan .bin
+   6. Simpan file kunci (AI_Key_Report.txt) dan file .bin
+
+B. DEKRIPSI VIDEO:
+   1. Klik "Dekripsi Video"
+   2. Pilih file .bin terenkripsi
+   3. Masukkan kunci (x1, x2, p, beta) dan mode yang SAMA
+   4. Sistem mendekripsi → menghasilkan .avi
+
+C. UJI KUALITAS:
+   1. Klik salah satu tombol uji kualitas
+   2. Pilih file yang akan diuji
+   3. Sistem mengekstrak key-frame dan menghitung metrik
+   4. Hasil ditampilkan dalam window baru
+
+================================================================================
+12. FORMAT FILE BINER KUSTOM
+================================================================================
+
+A. FORMAT VEN2 (Video Terenkripsi) — 36 byte header (VEN2):
+   Sistem yang baru menggunakan Magic "VEN2" dengan tambahan 4 byte IV untuk
+   Semantic Security dan mencegah serangan Two-Time Pad.
+   
+   Offset  Ukuran  Tipe     Isi
+   0       4       bytes    Magic "VEN2"
+   4       4       uint32   Width (lebar frame)
+   8       4       uint32   Height (tinggi frame)
+   12      4       uint32   Total Frames
+   16      4       float32  FPS
+   20      4       uint32   Audio Sample Rate
+   24      2       uint16   Audio Channels
+   26      4       uint32   Num Audio Samples
+   30      2       uint16   Has Audio (0/1)
+   32      4       uint32   Initialization Vector (IV) - khusus VEN2
+   [36..]                   Data video terenkripsi (frame per frame)
+   [setelah video]          Data audio terenkripsi (jika has_audio=1)
+
+B. FORMAT AUENC (Audio Terenkripsi) — 24 byte header:
+   Offset  Ukuran  Tipe     Isi
+   0       5       bytes    Magic "AUENC"
+   5       4       uint32   Sample Rate
+   9       2       uint16   Channels
+   11      4       uint32   Num Samples
+   15      2       uint16   Bit Depth
+   17      2       uint16   Stereo Flag (0/1)
+   19      5       bytes    Padding
+   [24..]                   Data audio terenkripsi
+
+================================================================================
+13. METRIK EVALUASI & RUMUS
+================================================================================
+
+A. Shannon Entropy (per channel):
+   H = -Σ p(i) * log2(p(i)), untuk i = 0..255
+   Ideal untuk ciphertext: 8.0 bit (distribusi seragam sempurna)
+
+B. NPCR (Number of Pixels Change Rate):
+   NPCR = (Jumlah piksel yang berbeda / Total piksel) × 100%
+   Ideal: >= 99.6094% (Wu et al., 2011)
+
+C. UACI (Unified Average Changing Intensity):
+   UACI = (1/N) × Σ |C1(i) - C2(i)| / 255 × 100%
+   Ideal: ≈ 33.4635% (Wu et al., 2011)
+
+D. Chi-Square Test (Distribusi Seragam):
+   χ² = Σ (O_i - E)² / E, untuk i = 0..255
+   E = N/256 (ekspektasi distribusi seragam)
+   Nilai kecil → distribusi seragam (ciphertext baik)
+
+E. Korelasi Spasial Pearson:
+   r = Σ(x-x̄)(y-ȳ) / √(Σ(x-x̄)² × Σ(y-ȳ)²)
+   Dihitung untuk arah: Horizontal, Vertikal, Diagonal
+   Plaintext: mendekati 1.0 (korelasi tinggi)
+   Ciphertext: mendekati 0.0 (tidak berkorelasi)
+
+F. Korelasi Temporal:
+   Pearson correlation antara Frame(t) dan Frame(t+1)
+   Plaintext: mendekati 1.0 (frame berurutan mirip)
+   Ciphertext: mendekati 0.0 (frame berurutan tidak berkorelasi)
+
+G. MSE (Mean Squared Error):
+   MSE = (1/N) × Σ (P_i - C_i)²
+   Ideal untuk enkripsi: nilai tinggi (berbeda jauh dari asli)
+
+H. PSNR (Peak Signal-to-Noise Ratio):
+   PSNR = 20 × log10(255 / √MSE) dB
+   Ideal untuk enkripsi: nilai rendah (<10 dB)
+
+================================================================================
+14. CATATAN TEKNIS PENTING
+================================================================================
+
+A. INTERPOLASI RESIZE:
+   Saat menganalisis frame cipher untuk uji statistik, WAJIB menggunakan
+   PIL.Image.NEAREST (bukan LANCZOS). LANCZOS menginterpolasi/merata-ratakan
+   nilai piksel tetangga sehingga distribusi cipher yang seharusnya seragam
+   menjadi terpusat di tengah (bell-curve). Ini menyebabkan:
+   - Entropy turun artifisial dari ~8.0 ke ~6.3
+   - Histogram terlihat bell-curve (padahal seharusnya flat)
+   - UACI terukur lebih rendah dari seharusnya
+
+B. CODEC VIDEO OUTPUT (LOSSLESS):
+   Mulai versi terbaru, dekripsi menggunakan FFmpeg dengan encoder:
+     - libx264rgb (prioritas utama): Encode langsung di ruang warna BGR,
+       TANPA konversi ke YUV. Tidak ada rounding error sama sekali.
+     - libx264 + yuv444p (fallback otomatis): Jika libx264rgb tidak tersedia,
+       sistem menggunakan libx264 dengan pixel format yuv444p (4:4:4),
+       yang menjamin tidak ada chroma subsampling sehingga tetap lossless.
+   Dengan kedua opsi ini:
+     MSE antara video asli dan terdekripsi = 0.0
+     PSNR = infinity
+   Ini membuktikan secara matematis bahwa algoritma MO-SiPINE bersifat
+   bit-perfect (reversible sempurna). Ukuran file output lebih besar
+   dibanding codec lossy (XVID), namun ini adalah trade-off yang wajar
+   dan dapat dijelaskan dalam konteks penelitian akademis.
+
+C. STATE CHAINING ANTAR-FRAME:
+   Untuk mencegah pola berulang antar-frame, parameter x1 dan x2
+   digeser setiap frame: x1 += 0.0019, x2 += 0.0073 (mod 1.0).
+   iter_bakar juga dikurangi dari 1000 (frame pertama) ke 10
+   (frame selanjutnya) untuk efisiensi.
+
+D. AUDIO ENKRIPSI TERPISAH (DOMAIN SEPARATION & IV):
+   Mulai versi terbaru, sistem memisahkan domain keystream antara audio
+   dan video menggunakan Initialization Vector (IV). Parameter kunci (x1, x2)
+   di-XOR dengan operasi matematika IV yang berlawanan antara video dan audio.
+   Hal ini memitigasi kerentanan Two-Time Pad sepenuhnya, sambil tetap
+   memastikan dekripsi audio bersifat independen (tidak bergantung pada
+   jumlah frame video).
+
+E. PENANGANAN NaN:
+   Fungsi _pearson_v dan _pearson_temporal memiliki penanganan khusus
+   untuk kasus varians nol (frame statis/solid) yang menyebabkan
+   scipy.stats.pearsonr mengembalikan NaN.
+
+F. KEY-FRAME SAMPLING:
+   Modul uji statistik dan histogram mengekstrak 10 pasang key-frame
+   (frame t dan t+1) secara merata di sepanjang durasi video, bukan
+   hanya 3 frame statis. Ini memberikan evaluasi yang lebih representatif
+   dan sesuai standar literatur enkripsi video digital.
+
+G. PERFORMA:
+   Setelah proses enkripsi/dekripsi selesai, sistem menampilkan:
+   - FPS (Frames Per Second): total_frames / durasi
+   - Throughput (MB/s): ukuran_file / durasi
+
+H. PEMILIHAN MODE PARAMETER ENKRIPSI (AI vs MANUAL):
+   Pada window enkripsi, pengguna dapat memilih dua mode input parameter
+   melalui radio button:
+     1. Otomatis (AI Predictor): Sistem menjalankan Heuristic Search v2 +
+        Narrowing Refinement + filter Lyapunov (n=300) selama 10 detik untuk
+        mencari parameter chaos yang menghasilkan entropy keystream tertinggi
+        (mendekati 8.0 bit). Sampel keystream yang dievaluasi: 50.000 byte.
+     2. Manual: Pengguna memasukkan nilai x1, x2, p, beta secara manual.
+        Saat proses enkripsi dimulai, sistem secara otomatis menghitung
+        skor entropi dari parameter yang dimasukkan menggunakan sampel
+        keystream 10.000 byte, kemudian menampilkannya di kolom "Entropi Info".
+        Hal ini memberikan umpan balik kualitas kriptografis tanpa memaksa
+        pengguna menunggu proses AI yang lebih lama.
+   Pada mode Manual, field input x1/x2/p/beta berstatus 'normal' (dapat diketik),
+   sedangkan field Entropy tetap 'readonly' (diisi otomatis oleh sistem).
+   Pada mode AI, semua field berstatus 'readonly' (diisi hasil prediksi AI).
+
+I. LABEL MODE DI GUI vs KODE INTERNAL:
+   Tabel pemetaan label tampilan GUI ke nilai mode internal (string):
+     GUI Label         | mode string internal
+     "SIP Map"         | "mosipine"  (mode default MO-SiPINE)
+     "Sine Only"       | "sine"
+     "PWLCM Only"      | "pwlcm"
+     "MO-SiPINE"       | "mosipine"  (digunakan di window Dekripsi)
+   Label "SIP Map" adalah nama singkat yang digunakan di window Enkripsi
+   dan Enkripsi Audio Standalone. Window Dekripsi menggunakan label
+   "MO-SiPINE" untuk konsistensi dengan terminologi akademis.
+
+================================================================================
+  AKHIR DOKUMENTASI
+================================================================================

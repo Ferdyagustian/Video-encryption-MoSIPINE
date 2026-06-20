@@ -1,0 +1,11 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "All mechanical fixes applied by merge script are correct. Dropped dangling call edges are unexported or non-significant internal functions."
+  ]
+}

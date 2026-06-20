@@ -1,0 +1,192 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "metrics": {}
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "sections": [
+        {
+          "heading": "outputLanguage",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "bifurkasi.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "sine_pwlcm_map",
+          "startLine": 5,
+          "endLine": 19,
+          "params": [
+            "x",
+            "p",
+            "beta"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sine_pwlcm_map",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sine_pwlcm_map",
+          "callee": "np.sin",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "fix_avi.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "Hasil_Uji_NIST_SubSampling.bin",
+      "language": "bin",
+      "fileCategory": "code",
+      "totalLines": 491,
+      "nonEmptyLines": 490,
+      "metrics": {}
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000_info.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "metrics": {}
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000.bin",
+      "language": "bin",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": "nist_data/sipine_threshold_x0123456789_10000.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/AI_Key_Report.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/audio_asli.wav",
+      "language": "wav",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/audio_noise.wav",
+      "language": "wav",
+      "fileCategory": "code",
+      "totalLines": 3459,
+      "nonEmptyLines": 3450,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/audio_terdekripsi.wav",
+      "language": "wav",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/audio_terenkripsi.bin",
+      "language": "bin",
+      "fileCategory": "code",
+      "totalLines": 5503,
+      "nonEmptyLines": 5482,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/output_terenkripsi.mkv",
+      "language": "mkv",
+      "fileCategory": "code",
+      "totalLines": 19103,
+      "nonEmptyLines": 18992,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/video_terdekripsi.avi",
+      "language": "avi",
+      "fileCategory": "code",
+      "totalLines": 10170,
+      "nonEmptyLines": 10131,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/video_terenkripsi.bin",
+      "language": "bin",
+      "fileCategory": "code",
+      "totalLines": 55288,
+      "nonEmptyLines": 55068,
+      "metrics": {}
+    },
+    {
+      "path": "Tempat_gambar/video_terenkripsi.ven2",
+      "language": "ven2",
+      "fileCategory": "code",
+      "totalLines": 620856,
+      "nonEmptyLines": 618431,
+      "metrics": {}
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "projectRoot": "C:\\Skripsi",
+  "batchFiles": [
+    {
+      "path": "audio_core.py",
+      "language": "python",
+      "sizeLines": 356,
+      "fileCategory": "code"
+    },
+    {
+      "path": "generator_nist.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    },
+    {
+      "path": "lyapunov.py",
+      "language": "python",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sipine.py",
+      "language": "python",
+      "sizeLines": 264,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "audio_core.py": [
+      "sipine.py"
+    ],
+    "generator_nist.py": [
+      "sipine.py"
+    ],
+    "lyapunov.py": [
+      "sipine.py"
+    ],
+    "sipine.py": []
+  }
+}

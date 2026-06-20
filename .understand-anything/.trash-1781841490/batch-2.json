@@ -1,0 +1,858 @@
+{
+  "nodes": [
+    {
+      "id": "file:audio_core.py",
+      "type": "file",
+      "name": "audio_core.py",
+      "filePath": "audio_core.py",
+      "summary": "Modul backend untuk enkripsi dan dekripsi audio WAV secara standalone.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "backend-kripto"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:generator_nist.py",
+      "type": "file",
+      "name": "generator_nist.py",
+      "filePath": "generator_nist.py",
+      "summary": "Modul pembangun bitstream (1 Megabit) dari peta chaos untuk pengujian statistik standar NIST SP 800-22.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "utilitas"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:lyapunov.py",
+      "type": "file",
+      "name": "lyapunov.py",
+      "filePath": "lyapunov.py",
+      "summary": "Utilitas untuk menghitung dan memvisualisasikan nilai eksponen Lyapunov dari peta chaos.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "utilitas"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sipine.py",
+      "type": "file",
+      "name": "sipine.py",
+      "filePath": "sipine.py",
+      "summary": "Inti algoritma chaotic map Modulo Sine-PWLCM, dioptimasi dengan Numba JIT untuk membangkitkan keystream pseudo-random secara cepat.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "utilitas"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:audio_core.py:_get_ffmpeg",
+      "type": "function",
+      "name": "_get_ffmpeg",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        30,
+        62
+      ],
+      "summary": "Fungsi _get_ffmpeg untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:audio_core.py:extract_audio_from_video",
+      "type": "function",
+      "name": "extract_audio_from_video",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        84,
+        111
+      ],
+      "summary": "Fungsi extract_audio_from_video untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:audio_core.py:encrypt_audio",
+      "type": "function",
+      "name": "encrypt_audio",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        114,
+        165
+      ],
+      "summary": "Fungsi encrypt_audio untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:audio_core.py:decrypt_audio",
+      "type": "function",
+      "name": "decrypt_audio",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        168,
+        215
+      ],
+      "summary": "Fungsi decrypt_audio untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:audio_core.py:audio_to_noise_wav",
+      "type": "function",
+      "name": "audio_to_noise_wav",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        218,
+        246
+      ],
+      "summary": "Fungsi audio_to_noise_wav untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:audio_core.py:mux_video_audio",
+      "type": "function",
+      "name": "mux_video_audio",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        249,
+        274
+      ],
+      "summary": "Fungsi mux_video_audio untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:audio_core.py:mux_video_audio_lossless",
+      "type": "function",
+      "name": "mux_video_audio_lossless",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        277,
+        303
+      ],
+      "summary": "Fungsi mux_video_audio_lossless untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:audio_core.py:demux_video_audio",
+      "type": "function",
+      "name": "demux_video_audio",
+      "filePath": "audio_core.py",
+      "lineRange": [
+        306,
+        356
+      ],
+      "summary": "Fungsi demux_video_audio untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generator_nist.py:hitung_progress",
+      "type": "function",
+      "name": "hitung_progress",
+      "filePath": "generator_nist.py",
+      "lineRange": [
+        29,
+        38
+      ],
+      "summary": "Fungsi hitung_progress untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generator_nist.py:validasi_entropy_awal",
+      "type": "function",
+      "name": "validasi_entropy_awal",
+      "filePath": "generator_nist.py",
+      "lineRange": [
+        41,
+        64
+      ],
+      "summary": "Fungsi validasi_entropy_awal untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generator_nist.py:hitung_statistik_bitstream",
+      "type": "function",
+      "name": "hitung_statistik_bitstream",
+      "filePath": "generator_nist.py",
+      "lineRange": [
+        67,
+        107
+      ],
+      "summary": "Fungsi hitung_statistik_bitstream untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sipine.py:_sine_pwlcm_step",
+      "type": "function",
+      "name": "_sine_pwlcm_step",
+      "filePath": "sipine.py",
+      "lineRange": [
+        11,
+        25
+      ],
+      "summary": "Fungsi _sine_pwlcm_step untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sipine.py:_pwlcm_only_step",
+      "type": "function",
+      "name": "_pwlcm_only_step",
+      "filePath": "sipine.py",
+      "lineRange": [
+        35,
+        50
+      ],
+      "summary": "Fungsi _pwlcm_only_step untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sipine.py:_generate_keystream_core",
+      "type": "function",
+      "name": "_generate_keystream_core",
+      "filePath": "sipine.py",
+      "lineRange": [
+        54,
+        114
+      ],
+      "summary": "Fungsi _generate_keystream_core untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sipine.py:_generate_keystream_video",
+      "type": "function",
+      "name": "_generate_keystream_video",
+      "filePath": "sipine.py",
+      "lineRange": [
+        118,
+        175
+      ],
+      "summary": "Fungsi _generate_keystream_video untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:_get_ffmpeg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:_get_ffmpeg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:extract_audio_from_video",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:extract_audio_from_video",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:encrypt_audio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:encrypt_audio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:decrypt_audio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:decrypt_audio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:audio_to_noise_wav",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:audio_to_noise_wav",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:mux_video_audio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:mux_video_audio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:mux_video_audio_lossless",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:mux_video_audio_lossless",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:demux_video_audio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "function:audio_core.py:demux_video_audio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generator_nist.py",
+      "target": "function:generator_nist.py:hitung_progress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generator_nist.py",
+      "target": "function:generator_nist.py:hitung_progress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generator_nist.py",
+      "target": "function:generator_nist.py:validasi_entropy_awal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generator_nist.py",
+      "target": "function:generator_nist.py:validasi_entropy_awal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generator_nist.py",
+      "target": "function:generator_nist.py:hitung_statistik_bitstream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generator_nist.py",
+      "target": "function:generator_nist.py:hitung_statistik_bitstream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_generate_keystream_core",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_generate_keystream_core",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_generate_keystream_video",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sipine.py",
+      "target": "function:sipine.py:_generate_keystream_video",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:audio_core.py",
+      "target": "file:sipine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:generator_nist.py",
+      "target": "file:sipine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lyapunov.py",
+      "target": "file:sipine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:audio_core.py:extract_audio_from_video",
+      "target": "function:audio_core.py:_get_ffmpeg",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:audio_core.py:encrypt_audio",
+      "target": "function:audio_core.py:_get_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:audio_core.py:decrypt_audio",
+      "target": "function:audio_core.py:_get_keystream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:audio_core.py:mux_video_audio",
+      "target": "function:audio_core.py:_get_ffmpeg",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:audio_core.py:mux_video_audio_lossless",
+      "target": "function:audio_core.py:_get_ffmpeg",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:audio_core.py:demux_video_audio",
+      "target": "function:audio_core.py:_get_ffmpeg",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:audio_core.py:demux_video_audio",
+      "target": "function:audio_core.py:_get_ffmpeg",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:audio_core.py:demux_video_audio",
+      "target": "function:audio_core.py:encrypt_audio",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:generator_nist.py:validasi_entropy_awal",
+      "target": "function:sipine.py:sine_pwlcm_map",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:generator_nist.py:validasi_entropy_awal",
+      "target": "function:sipine.py:sine_pwlcm_map",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:generator_nist.py:validasi_entropy_awal",
+      "target": "function:sipine.py:sine_pwlcm_map",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_core",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_pwlcm_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_sine_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:sipine.py:_generate_keystream_video",
+      "target": "function:sipine.py:_pwlcm_only_step",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

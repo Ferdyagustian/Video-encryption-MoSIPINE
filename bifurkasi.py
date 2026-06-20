@@ -22,7 +22,7 @@ def sine_pwlcm_map(x, p, beta):
 iterasi_buang = 2000
 iterasi_plot = 1500
 x0 = 0.123456
-beta = 0.99  
+beta = 0.77  
 
 # Rentang parameter p dari 0.01 hingga 0.49 (p tidak boleh 0 atau >= 0.5)
 p_values = np.linspace(0.01, 0.49, 1000)

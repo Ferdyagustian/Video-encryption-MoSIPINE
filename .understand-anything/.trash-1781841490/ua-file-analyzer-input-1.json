@@ -1,0 +1,44 @@
+{
+  "projectRoot": "C:\\Skripsi",
+  "batchFiles": [
+    {
+      "path": "ai_optimizer.py",
+      "language": "python",
+      "sizeLines": 221,
+      "fileCategory": "code"
+    },
+    {
+      "path": "gui_video.py",
+      "language": "python",
+      "sizeLines": 1924,
+      "fileCategory": "code"
+    },
+    {
+      "path": "gui_video_main.py",
+      "language": "python",
+      "sizeLines": 131,
+      "fileCategory": "code"
+    },
+    {
+      "path": "video_core.py",
+      "language": "python",
+      "sizeLines": 596,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "ai_optimizer.py": [
+      "sipine.py"
+    ],
+    "gui_video.py": [
+      "ai_optimizer.py",
+      "video_core.py"
+    ],
+    "gui_video_main.py": [
+      "gui_video.py"
+    ],
+    "video_core.py": [
+      "sipine.py"
+    ]
+  }
+}

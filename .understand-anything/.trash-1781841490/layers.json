@@ -1,0 +1,68 @@
+[
+  {
+    "id": "layer:core-algorithms",
+    "name": "Core Algorithms",
+    "description": "Lapisan inti yang berisi implementasi peta chaos Modulo Sine-PWLCM (MO-SiPINE), kompilasi Numba JIT, serta utilitas analisis dinamika chaos (bifurkasi dan eksponen Lyapunov).",
+    "nodeIds": [
+      "file:sipine.py",
+      "file:bifurkasi.py",
+      "file:lyapunov.py"
+    ]
+  },
+  {
+    "id": "layer:cryptography-ai-optimization",
+    "name": "Cryptography & AI Optimization",
+    "description": "Lapisan backend untuk pemrosesan enkripsi/dekripsi video-audio terpadu, enkripsi audio WAV standalone, pencarian kunci optimal menggunakan AI, dan generator bitstream untuk uji NIST.",
+    "nodeIds": [
+      "file:video_core.py",
+      "file:audio_core.py",
+      "file:ai_optimizer.py",
+      "file:generator_nist.py"
+    ]
+  },
+  {
+    "id": "layer:user-interface",
+    "name": "User Interface",
+    "description": "Lapisan antarmuka pengguna berbasis GUI Tkinter untuk pemutaran video, pengoperasian enkripsi/dekripsi, serta visualisasi hasil uji kualitas visual dan statistik.",
+    "nodeIds": [
+      "file:gui_video.py",
+      "file:gui_video_main.py"
+    ]
+  },
+  {
+    "id": "layer:documentation-configuration",
+    "name": "Documentation & Configuration",
+    "description": "Lapisan dokumentasi sistem kriptografi, konfigurasi analisis proyek, laporan hasil pengujian NIST, dan konfigurasi environment.",
+    "nodeIds": [
+      "document:DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "document:Hasil_Uji_NIST_SubSampling.txt",
+      "document:Laporan_Hasil_Uji_NIST.txt",
+      "document:hasil nist 100.txt",
+      "document:hasiluji.txt",
+      "config:pyrightconfig.json",
+      "file:.understand-anything/.understandignore",
+      "config:.understand-anything/config.json",
+      "document:nist_data/sipine_threshold_x0123456789_10000_info.txt",
+      "document:nist_data/sipine_threshold_x0123456789_10000.txt",
+      "document:Tempat_gambar/AI_Key_Report.txt"
+    ]
+  },
+  {
+    "id": "layer:multimedia-assets-test-data",
+    "name": "Multimedia Assets & Test Data",
+    "description": "Lapisan yang berisi berkas biner/multimedia hasil enkripsi/dekripsi, audio/video sampel asli, serta skrip migrasi/utilitas format video.",
+    "nodeIds": [
+      "file:Hasil_Uji_NIST_SubSampling.bin",
+      "file:fix_avi.py",
+      "file:nist_data/sipine_threshold_x0123456789_10000.bin",
+      "file:Tempat_gambar/audio_asli.wav",
+      "file:Tempat_gambar/audio_noise.wav",
+      "file:Tempat_gambar/audio_terdekripsi.wav",
+      "file:Tempat_gambar/audio_terenkripsi.bin",
+      "file:Tempat_gambar/output_terenkripsi.mkv",
+      "file:Tempat_gambar/video_terdekripsi.avi",
+      "file:Tempat_gambar/video_terenkripsi.bin",
+      "file:Tempat_gambar/video_terenkripsi.ven2"
+    ]
+  }
+]

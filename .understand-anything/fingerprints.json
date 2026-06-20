@@ -1,0 +1,1372 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "b9ff58fe10e5e92c900b0a95c193521b6bf9393d",
+  "generatedAt": "2026-06-19T03:57:53.465Z",
+  "files": {
+    ".understand-anything/.understandignore": {
+      "filePath": ".understand-anything/.understandignore",
+      "contentHash": "521c93d62efcd5219881aac585edfef9399b6eeef56a0271ec882a318ba151e2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": false
+    },
+    ".understand-anything/config.json": {
+      "filePath": ".understand-anything/config.json",
+      "contentHash": "ef9f4ede4e42578350c16139b5ac78c2e3582a1c9a9ab1c89731bb3c088dca23",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "ai_optimizer.py": {
+      "filePath": "ai_optimizer.py",
+      "contentHash": "f8713c672beee276a75b8aaeeda998fe09301e22c6ce97871de628a26f3ed34d",
+      "functions": [
+        {
+          "name": "calculate_entropy",
+          "params": [
+            "data"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "_lyapunov_estimate",
+          "params": [
+            "x0",
+            "p",
+            "beta",
+            "n"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "_clamp",
+          "params": [
+            "val",
+            "lo",
+            "hi"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_perturb_near",
+          "params": [
+            "best_keys",
+            "mode"
+          ],
+          "returnType": "tuple",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "predict_best_keys",
+          "params": [
+            "mode",
+            "timeout",
+            "sample_size"
+          ],
+          "exported": true,
+          "lineCount": 122
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "sipine",
+          "specifiers": [
+            "generate_keystream",
+            "generate_keystream_sine_only",
+            "generate_keystream_pwlcm_only",
+            "sine_pwlcm_map"
+          ]
+        }
+      ],
+      "exports": [
+        "calculate_entropy",
+        "_lyapunov_estimate",
+        "_clamp",
+        "_perturb_near",
+        "predict_best_keys"
+      ],
+      "totalLines": 222,
+      "hasStructuralAnalysis": true
+    },
+    "audio_core.py": {
+      "filePath": "audio_core.py",
+      "contentHash": "64defb085a3d1f3bca9f04e0c41878736bb49b934827edef409b729e1fb46b48",
+      "functions": [
+        {
+          "name": "_get_ffmpeg",
+          "params": [],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "_get_keystream",
+          "params": [
+            "x1",
+            "x2",
+            "p",
+            "beta",
+            "iter_bakar",
+            "total",
+            "mode_str"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "extract_audio_from_video",
+          "params": [
+            "video_path",
+            "out_wav_path"
+          ],
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "encrypt_audio",
+          "params": [
+            "wav_path",
+            "out_bin_path",
+            "mode",
+            "params",
+            "progress_callback"
+          ],
+          "exported": true,
+          "lineCount": 52
+        },
+        {
+          "name": "decrypt_audio",
+          "params": [
+            "bin_path",
+            "out_wav_path",
+            "mode",
+            "params",
+            "progress_callback"
+          ],
+          "exported": true,
+          "lineCount": 48
+        },
+        {
+          "name": "audio_to_noise_wav",
+          "params": [
+            "bin_path",
+            "out_noise_wav_path"
+          ],
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "mux_video_audio",
+          "params": [
+            "video_path",
+            "audio_path",
+            "out_path"
+          ],
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "mux_video_audio_lossless",
+          "params": [
+            "video_path",
+            "audio_path",
+            "out_path"
+          ],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "demux_video_audio",
+          "params": [
+            "mp4_path",
+            "out_video_path",
+            "out_audio_bin_path",
+            "mode",
+            "params"
+          ],
+          "exported": true,
+          "lineCount": 51
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "struct",
+          "specifiers": [
+            "struct"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "scipy.io.wavfile",
+          "specifiers": [
+            "wavfile"
+          ]
+        },
+        {
+          "source": "sipine",
+          "specifiers": [
+            "generate_keystream_video_np"
+          ]
+        }
+      ],
+      "exports": [
+        "_get_ffmpeg",
+        "_get_keystream",
+        "extract_audio_from_video",
+        "encrypt_audio",
+        "decrypt_audio",
+        "audio_to_noise_wav",
+        "mux_video_audio",
+        "mux_video_audio_lossless",
+        "demux_video_audio"
+      ],
+      "totalLines": 357,
+      "hasStructuralAnalysis": true
+    },
+    "bifurkasi.py": {
+      "filePath": "bifurkasi.py",
+      "contentHash": "c34706414eabdf3ef98c35c99b8860329474ec0efc4d689bb5857bdd6711518d",
+      "functions": [
+        {
+          "name": "sine_pwlcm_map",
+          "params": [
+            "x",
+            "p",
+            "beta"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "matplotlib.pyplot",
+          "specifiers": [
+            "plt"
+          ]
+        }
+      ],
+      "exports": [
+        "sine_pwlcm_map"
+      ],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "DOKUMENTASI_SISTEM_MO_SIPINE.txt": {
+      "filePath": "DOKUMENTASI_SISTEM_MO_SIPINE.txt",
+      "contentHash": "fbff28d33af3b5b40776336887a53e3424ac52d03b0a950d24f919cc3437912b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 608,
+      "hasStructuralAnalysis": false
+    },
+    "fix_avi.py": {
+      "filePath": "fix_avi.py",
+      "contentHash": "cd9402154882d618a9ec124e6ae34d4de07c50d2ee0b780b1bec12732d9b7cf2",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "generator_nist.py": {
+      "filePath": "generator_nist.py",
+      "contentHash": "1d914396ff6b134857de57397a79838973cdbe01b3f8ef71d158599a6d2d36f3",
+      "functions": [
+        {
+          "name": "hitung_progress",
+          "params": [
+            "current",
+            "total",
+            "waktu_mulai"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "validasi_entropy_awal",
+          "params": [
+            "x0",
+            "p",
+            "beta",
+            "n"
+          ],
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "hitung_statistik_bitstream",
+          "params": [
+            "arr_bytes"
+          ],
+          "exported": true,
+          "lineCount": 41
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "sipine",
+          "specifiers": [
+            "generate_keystream_video_np",
+            "sine_pwlcm_map"
+          ]
+        }
+      ],
+      "exports": [
+        "hitung_progress",
+        "validasi_entropy_awal",
+        "hitung_statistik_bitstream"
+      ],
+      "totalLines": 209,
+      "hasStructuralAnalysis": true
+    },
+    "gui_video_main.py": {
+      "filePath": "gui_video_main.py",
+      "contentHash": "b749ec4ebe24c1c82a588da359c44d070e121391f4d47a40b074670e0b957571",
+      "functions": [
+        {
+          "name": "_make_btn",
+          "params": [
+            "parent",
+            "text",
+            "cmd",
+            "width",
+            "pady"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "_separator",
+          "params": [
+            "parent"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "build_main",
+          "params": [],
+          "exported": true,
+          "lineCount": 82
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "tkinter",
+          "specifiers": [
+            "tk"
+          ]
+        },
+        {
+          "source": "gui_video",
+          "specifiers": [
+            "pencet6",
+            "pencet7",
+            "uji_histogram_korelasi_video",
+            "uji_distribusi_scatter_video",
+            "uji_statistik_video",
+            "uji_kualitas_audio"
+          ]
+        }
+      ],
+      "exports": [
+        "_make_btn",
+        "_separator",
+        "build_main"
+      ],
+      "totalLines": 132,
+      "hasStructuralAnalysis": true
+    },
+    "gui_video.py": {
+      "filePath": "gui_video.py",
+      "contentHash": "c463aa25760f506edc096529cf0fd8a6c808c0d0276bd5395996fc117bd5fd4c",
+      "functions": [
+        {
+          "name": "_create_placeholder",
+          "params": [],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "pencet6",
+          "params": [
+            "session",
+            "on_done"
+          ],
+          "exported": true,
+          "lineCount": 400
+        },
+        {
+          "name": "pencet7",
+          "params": [
+            "session",
+            "on_done"
+          ],
+          "exported": true,
+          "lineCount": 241
+        },
+        {
+          "name": "_ujiuniform_v",
+          "params": [
+            "arr_flat"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "_uaci_v",
+          "params": [
+            "arr1",
+            "arr2"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "_npcr_v",
+          "params": [
+            "arr1",
+            "arr2"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "_pearson_v",
+          "params": [
+            "ch2d",
+            "direction"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "_pearson_temporal",
+          "params": [
+            "arr1",
+            "arr2"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "_psnr_mse_v",
+          "params": [
+            "arr1",
+            "arr2"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "_entropy_v",
+          "params": [
+            "ch_flat"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "_prompt_and_extract_frames",
+          "params": [
+            "parent"
+          ],
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "_detect_type",
+          "params": [
+            "fp"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_extract_3_frames",
+          "params": [
+            "fp",
+            "slot",
+            "parent_win"
+          ],
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "_extract_key_frames",
+          "params": [
+            "fp",
+            "slot",
+            "parent_win",
+            "n_frames"
+          ],
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "_make_slot_2img",
+          "params": [
+            "parent",
+            "slot",
+            "title",
+            "data",
+            "FW",
+            "FH"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "uji_histogram_korelasi_video",
+          "params": [
+            "session",
+            "parent"
+          ],
+          "exported": true,
+          "lineCount": 101
+        },
+        {
+          "name": "uji_distribusi_scatter_video",
+          "params": [
+            "session",
+            "parent"
+          ],
+          "exported": true,
+          "lineCount": 96
+        },
+        {
+          "name": "uji_statistik_video",
+          "params": [
+            "session",
+            "parent"
+          ],
+          "exported": true,
+          "lineCount": 84
+        },
+        {
+          "name": "enkripsi_audio_standalone",
+          "params": [
+            "session",
+            "on_done"
+          ],
+          "exported": true,
+          "lineCount": 173
+        },
+        {
+          "name": "dekripsi_audio_standalone",
+          "params": [
+            "session",
+            "on_done"
+          ],
+          "exported": true,
+          "lineCount": 165
+        },
+        {
+          "name": "uji_kualitas_audio",
+          "params": [
+            "session",
+            "parent"
+          ],
+          "exported": true,
+          "lineCount": 214
+        }
+      ],
+      "classes": [
+        {
+          "name": "VideoPlayer",
+          "methods": [
+            "__init__",
+            "_show_frame",
+            "load_source",
+            "toggle_play",
+            "replay",
+            "stop",
+            "_play_loop"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 186
+        }
+      ],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "collections",
+          "specifiers": [
+            "collections"
+          ]
+        },
+        {
+          "source": "tkinter",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": "tkinter",
+          "specifiers": [
+            "filedialog",
+            "messagebox",
+            "ttk",
+            "scrolledtext"
+          ]
+        },
+        {
+          "source": "PIL.Image",
+          "specifiers": [
+            "PIL.Image"
+          ]
+        },
+        {
+          "source": "PIL.ImageTk",
+          "specifiers": [
+            "PIL.ImageTk"
+          ]
+        },
+        {
+          "source": "cv2",
+          "specifiers": [
+            "cv2"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "struct",
+          "specifiers": [
+            "struct"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "skimage.measure",
+          "specifiers": [
+            "skimage.measure"
+          ]
+        },
+        {
+          "source": "matplotlib",
+          "specifiers": [
+            "matplotlib"
+          ]
+        },
+        {
+          "source": "matplotlib.pyplot",
+          "specifiers": [
+            "plt"
+          ]
+        },
+        {
+          "source": "scipy.stats",
+          "specifiers": [
+            "pearsonr"
+          ]
+        },
+        {
+          "source": "video_core",
+          "specifiers": [
+            "encrypt_video_audio_to_VEN2",
+            "decrypt_VEN2_to_video_audio",
+            "extract_sample_frames",
+            "extract_single_frame_from_bin"
+          ]
+        },
+        {
+          "source": "ai_optimizer",
+          "specifiers": [
+            "predict_best_keys"
+          ]
+        }
+      ],
+      "exports": [
+        "_create_placeholder",
+        "VideoPlayer",
+        "pencet6",
+        "pencet7",
+        "_ujiuniform_v",
+        "_uaci_v",
+        "_npcr_v",
+        "_pearson_v",
+        "_pearson_temporal",
+        "_psnr_mse_v",
+        "_entropy_v",
+        "_prompt_and_extract_frames",
+        "_detect_type",
+        "_extract_3_frames",
+        "_extract_key_frames",
+        "_make_slot_2img",
+        "uji_histogram_korelasi_video",
+        "uji_distribusi_scatter_video",
+        "uji_statistik_video",
+        "enkripsi_audio_standalone",
+        "dekripsi_audio_standalone",
+        "uji_kualitas_audio"
+      ],
+      "totalLines": 1925,
+      "hasStructuralAnalysis": true
+    },
+    "hasil nist 100.txt": {
+      "filePath": "hasil nist 100.txt",
+      "contentHash": "8464e83fd57dcbfa64061458c9064c951402a7119fe3c13c5c0342e9f96234b2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 43,
+      "hasStructuralAnalysis": false
+    },
+    "Hasil_Uji_NIST_SubSampling.bin": {
+      "filePath": "Hasil_Uji_NIST_SubSampling.bin",
+      "contentHash": "77076d0454c643172fbeb62eb9258c1889d1499e9241483e92ddc08235aa312a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 491,
+      "hasStructuralAnalysis": false
+    },
+    "Hasil_Uji_NIST_SubSampling.txt": {
+      "filePath": "Hasil_Uji_NIST_SubSampling.txt",
+      "contentHash": "1ee00dbe00e0126bfee953063b3926c74384e3cfa443ef11aa1684d717d0e84e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "hasiluji.txt": {
+      "filePath": "hasiluji.txt",
+      "contentHash": "14e5c3dcaf468b978bff052ef38b3fcb0dad3330fe72958483bc173459159b25",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 52,
+      "hasStructuralAnalysis": false
+    },
+    "Laporan_Hasil_Uji_NIST.txt": {
+      "filePath": "Laporan_Hasil_Uji_NIST.txt",
+      "contentHash": "dd740d0949c1eca2c8027c5fa860c955b128a8becd8c17d88b0ab93cc4a477ee",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": false
+    },
+    "lyapunov.py": {
+      "filePath": "lyapunov.py",
+      "contentHash": "386b108152ca846237405329bb2c7a6bc3b0560feb90215195b7293a41de619c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "matplotlib.pyplot",
+          "specifiers": [
+            "plt"
+          ]
+        },
+        {
+          "source": "sipine",
+          "specifiers": [
+            "sine_pwlcm_map"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "nist_data/sipine_threshold_x0123456789_10000_info.txt": {
+      "filePath": "nist_data/sipine_threshold_x0123456789_10000_info.txt",
+      "contentHash": "7f78b9ce55ebe59ee0f2b7a30909d08313df029e1314d07983b32c9bcc63c632",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": false
+    },
+    "nist_data/sipine_threshold_x0123456789_10000.bin": {
+      "filePath": "nist_data/sipine_threshold_x0123456789_10000.bin",
+      "contentHash": "cd8968abadad68497c518f21c7ffbe846fecbe8df7b717baeb10d790a36a75b9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "nist_data/sipine_threshold_x0123456789_10000.txt": {
+      "filePath": "nist_data/sipine_threshold_x0123456789_10000.txt",
+      "contentHash": "2205cd852e31b8b5db7294371f0043c6c9415c82435e471dfc0570fea0c37cdb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "pyrightconfig.json": {
+      "filePath": "pyrightconfig.json",
+      "contentHash": "84f34e2ae4f644ccae2d4516fcac337ee4c679be6e919316b1dab02ba2b4d189",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "sipine.py": {
+      "filePath": "sipine.py",
+      "contentHash": "53dd0f4e483c2d59dc26b83cfcb6a82224b914e95eda7c93bcf77f8b460e01de",
+      "functions": [
+        {
+          "name": "_sine_pwlcm_step",
+          "params": [
+            "x",
+            "p",
+            "beta"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "_sine_only_step",
+          "params": [
+            "x",
+            "beta"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_pwlcm_only_step",
+          "params": [
+            "x",
+            "p"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "_generate_keystream_core",
+          "params": [
+            "x1",
+            "x2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ],
+          "exported": true,
+          "lineCount": 61
+        },
+        {
+          "name": "_generate_keystream_video",
+          "params": [
+            "x1",
+            "x2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ],
+          "exported": true,
+          "lineCount": 58
+        },
+        {
+          "name": "sine_pwlcm_map",
+          "params": [
+            "x",
+            "p",
+            "beta"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generate_keystream",
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generate_keystream_sine_only",
+          "params": [
+            "x0_1",
+            "x0_2",
+            "beta",
+            "iter_awal",
+            "total"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generate_keystream_pwlcm_only",
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generate_keystream_np",
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "generate_keystream_video_np",
+          "params": [
+            "x0_1",
+            "x0_2",
+            "p",
+            "beta",
+            "iter_awal",
+            "total",
+            "mode"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "_warmup",
+          "params": [],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "numba",
+          "specifiers": [
+            "njit"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        }
+      ],
+      "exports": [
+        "_sine_pwlcm_step",
+        "_sine_only_step",
+        "_pwlcm_only_step",
+        "_generate_keystream_core",
+        "_generate_keystream_video",
+        "sine_pwlcm_map",
+        "generate_keystream",
+        "generate_keystream_sine_only",
+        "generate_keystream_pwlcm_only",
+        "generate_keystream_np",
+        "generate_keystream_video_np",
+        "_warmup"
+      ],
+      "totalLines": 265,
+      "hasStructuralAnalysis": true
+    },
+    "Tempat_gambar/AI_Key_Report.txt": {
+      "filePath": "Tempat_gambar/AI_Key_Report.txt",
+      "contentHash": "9e6c51b8987068fc5aec691bba005522998508c81e3680bccaf18524b8ea116a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/audio_asli.wav": {
+      "filePath": "Tempat_gambar/audio_asli.wav",
+      "contentHash": "6024f48e201fcc24430b1594f5da2530b32a152357257a79a249da1e6a4c3d02",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/audio_noise.wav": {
+      "filePath": "Tempat_gambar/audio_noise.wav",
+      "contentHash": "625de50a27fb58cd1119009f439e98311aa4d6a74a3b58202ebd9f725e601b92",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3459,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/audio_terdekripsi.wav": {
+      "filePath": "Tempat_gambar/audio_terdekripsi.wav",
+      "contentHash": "4c2dec542f28609639d2705f3837e87b0db4d7356f093d6cdc9f385ca89dc0b5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/audio_terenkripsi.bin": {
+      "filePath": "Tempat_gambar/audio_terenkripsi.bin",
+      "contentHash": "a86e20e9a22f8ce85c634a615a44bd5c5d2a7c347965b5e5d8fa595d5f8d1d5f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5503,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/output_terenkripsi.mkv": {
+      "filePath": "Tempat_gambar/output_terenkripsi.mkv",
+      "contentHash": "e466864165c333297553fb7e0787a17651fead4fca1fa740371680b59faab762",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19104,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/video_terdekripsi.avi": {
+      "filePath": "Tempat_gambar/video_terdekripsi.avi",
+      "contentHash": "27d770852cf3001b85223f8aecfe899b75f1559d2a09586f5b0ed8abb7eb6aaf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10170,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/video_terenkripsi.bin": {
+      "filePath": "Tempat_gambar/video_terenkripsi.bin",
+      "contentHash": "cd66d80c8f744a9c2ceac9c400d80c3c699796b307132cad689e27a9f92ef081",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 55288,
+      "hasStructuralAnalysis": false
+    },
+    "Tempat_gambar/video_terenkripsi.ven2": {
+      "filePath": "Tempat_gambar/video_terenkripsi.ven2",
+      "contentHash": "8727a37189bc4a58116cb39f11290f1b83b884b0d5c17f81d60fcd68b1056132",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 620856,
+      "hasStructuralAnalysis": false
+    },
+    "video_core.py": {
+      "filePath": "video_core.py",
+      "contentHash": "1119c47cfa6592ce2e03f015eb947fdf2a24548f1bacb8347715a3c10c4c07c1",
+      "functions": [
+        {
+          "name": "_get_keystream",
+          "params": [
+            "x1",
+            "x2",
+            "p",
+            "beta",
+            "iter_bakar",
+            "total",
+            "mode_str"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "encrypt_video_audio_to_VEN2",
+          "params": [
+            "input_video_path",
+            "output_bin_path",
+            "mode",
+            "params",
+            "progress_callback"
+          ],
+          "exported": true,
+          "lineCount": 135
+        },
+        {
+          "name": "decrypt_VEN2_to_video_audio",
+          "params": [
+            "input_bin_path",
+            "output_mp4_path",
+            "mode",
+            "params",
+            "progress_callback"
+          ],
+          "exported": true,
+          "lineCount": 143
+        },
+        {
+          "name": "export_bin_to_noise_video",
+          "params": [
+            "input_bin_path",
+            "output_avi_path",
+            "progress_callback"
+          ],
+          "exported": true,
+          "lineCount": 117
+        },
+        {
+          "name": "decrypt_VEN2_to_video",
+          "params": [
+            "input_bin_path",
+            "output_video_path",
+            "mode",
+            "params",
+            "progress_callback"
+          ],
+          "exported": true,
+          "lineCount": 84
+        },
+        {
+          "name": "extract_sample_frames",
+          "params": [
+            "video_path",
+            "out_dir"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "extract_single_frame_from_bin",
+          "params": [
+            "bin_path",
+            "frame_position_ratio",
+            "out_path"
+          ],
+          "exported": true,
+          "lineCount": 35
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "struct",
+          "specifiers": [
+            "struct"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "cv2",
+          "specifiers": [
+            "cv2"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "sipine",
+          "specifiers": [
+            "generate_keystream_video_np"
+          ]
+        }
+      ],
+      "exports": [
+        "_get_keystream",
+        "encrypt_video_audio_to_VEN2",
+        "decrypt_VEN2_to_video_audio",
+        "export_bin_to_noise_video",
+        "decrypt_VEN2_to_video",
+        "extract_sample_frames",
+        "extract_single_frame_from_bin"
+      ],
+      "totalLines": 597,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 31,
+    "filesWithImports": 7,
+    "totalEdges": 8
+  },
+  "importMap": {
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    "ai_optimizer.py": [
+      "sipine.py"
+    ],
+    "audio_core.py": [
+      "sipine.py"
+    ],
+    "bifurkasi.py": [],
+    "DOKUMENTASI_SISTEM_MO_SIPINE.txt": [],
+    "fix_avi.py": [],
+    "generator_nist.py": [
+      "sipine.py"
+    ],
+    "gui_video_main.py": [
+      "gui_video.py"
+    ],
+    "gui_video.py": [
+      "ai_optimizer.py",
+      "video_core.py"
+    ],
+    "hasil nist 100.txt": [],
+    "Hasil_Uji_NIST_SubSampling.bin": [],
+    "Hasil_Uji_NIST_SubSampling.txt": [],
+    "hasiluji.txt": [],
+    "Laporan_Hasil_Uji_NIST.txt": [],
+    "lyapunov.py": [
+      "sipine.py"
+    ],
+    "nist_data/sipine_threshold_x0123456789_10000_info.txt": [],
+    "nist_data/sipine_threshold_x0123456789_10000.bin": [],
+    "nist_data/sipine_threshold_x0123456789_10000.txt": [],
+    "pyrightconfig.json": [],
+    "sipine.py": [],
+    "Tempat_gambar/AI_Key_Report.txt": [],
+    "Tempat_gambar/audio_asli.wav": [],
+    "Tempat_gambar/audio_noise.wav": [],
+    "Tempat_gambar/audio_terdekripsi.wav": [],
+    "Tempat_gambar/audio_terenkripsi.bin": [],
+    "Tempat_gambar/output_terenkripsi.mkv": [],
+    "Tempat_gambar/video_terdekripsi.avi": [],
+    "Tempat_gambar/video_terenkripsi.bin": [],
+    "Tempat_gambar/video_terenkripsi.ven2": [],
+    "video_core.py": [
+      "sipine.py"
+    ]
+  }
+}

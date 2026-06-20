@@ -1,0 +1,242 @@
+{
+  "nodes": [
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "Konfigurasi pola berkas dan direktori yang diabaikan dalam analisis kode.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "Konfigurasi internal plugin untuk bahasa output dan pembaruan otomatis.",
+      "tags": [
+        "kriptografi-chaos",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:bifurkasi.py",
+      "type": "file",
+      "name": "bifurkasi.py",
+      "filePath": "bifurkasi.py",
+      "summary": "Utilitas untuk mensimulasikan dan membuat visualisasi diagram bifurkasi dari peta chaos.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "utilitas"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:fix_avi.py",
+      "type": "file",
+      "name": "fix_avi.py",
+      "filePath": "fix_avi.py",
+      "summary": "Skrip utilitas migrasi format video dari format .avi ke kontainer .mp4.",
+      "tags": [
+        "kriptografi-chaos",
+        "python",
+        "utilitas"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:Hasil_Uji_NIST_SubSampling.bin",
+      "type": "file",
+      "name": "Hasil_Uji_NIST_SubSampling.bin",
+      "filePath": "Hasil_Uji_NIST_SubSampling.bin",
+      "summary": "Berkas biner output hasil uji NIST (bitstream).",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:nist_data/sipine_threshold_x0123456789_10000_info.txt",
+      "type": "document",
+      "name": "sipine_threshold_x0123456789_10000_info.txt",
+      "filePath": "nist_data/sipine_threshold_x0123456789_10000_info.txt",
+      "summary": "Informasi metadata uji NIST.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:nist_data/sipine_threshold_x0123456789_10000.bin",
+      "type": "file",
+      "name": "sipine_threshold_x0123456789_10000.bin",
+      "filePath": "nist_data/sipine_threshold_x0123456789_10000.bin",
+      "summary": "Berkas biner bitstream uji NIST.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:nist_data/sipine_threshold_x0123456789_10000.txt",
+      "type": "document",
+      "name": "sipine_threshold_x0123456789_10000.txt",
+      "filePath": "nist_data/sipine_threshold_x0123456789_10000.txt",
+      "summary": "Berkas teks bitstream uji NIST.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:Tempat_gambar/AI_Key_Report.txt",
+      "type": "document",
+      "name": "AI_Key_Report.txt",
+      "filePath": "Tempat_gambar/AI_Key_Report.txt",
+      "summary": "Laporan hasil pencarian kunci optimal AI.",
+      "tags": [
+        "kriptografi-chaos",
+        "dokumentasi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:Tempat_gambar/audio_asli.wav",
+      "type": "file",
+      "name": "audio_asli.wav",
+      "filePath": "Tempat_gambar/audio_asli.wav",
+      "summary": "Berkas contoh audio asli dalam format WAV.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:Tempat_gambar/audio_noise.wav",
+      "type": "file",
+      "name": "audio_noise.wav",
+      "filePath": "Tempat_gambar/audio_noise.wav",
+      "summary": "Berkas audio terenkripsi dalam format WAV yang terdengar seperti noise.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:Tempat_gambar/audio_terdekripsi.wav",
+      "type": "file",
+      "name": "audio_terdekripsi.wav",
+      "filePath": "Tempat_gambar/audio_terdekripsi.wav",
+      "summary": "Berkas audio hasil dekripsi dalam format WAV.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:Tempat_gambar/audio_terenkripsi.bin",
+      "type": "file",
+      "name": "audio_terenkripsi.bin",
+      "filePath": "Tempat_gambar/audio_terenkripsi.bin",
+      "summary": "Berkas biner hasil enkripsi audio.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:Tempat_gambar/output_terenkripsi.mkv",
+      "type": "file",
+      "name": "output_terenkripsi.mkv",
+      "filePath": "Tempat_gambar/output_terenkripsi.mkv",
+      "summary": "Berkas video hasil enkripsi dalam wadah MKV.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:Tempat_gambar/video_terdekripsi.avi",
+      "type": "file",
+      "name": "video_terdekripsi.avi",
+      "filePath": "Tempat_gambar/video_terdekripsi.avi",
+      "summary": "Berkas video hasil dekripsi dalam format AVI.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:Tempat_gambar/video_terenkripsi.bin",
+      "type": "file",
+      "name": "video_terenkripsi.bin",
+      "filePath": "Tempat_gambar/video_terenkripsi.bin",
+      "summary": "Berkas biner hasil enkripsi video.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:Tempat_gambar/video_terenkripsi.ven2",
+      "type": "file",
+      "name": "video_terenkripsi.ven2",
+      "filePath": "Tempat_gambar/video_terenkripsi.ven2",
+      "summary": "Berkas video terenkripsi menggunakan format biner kustom .ven2.",
+      "tags": [
+        "kriptografi-chaos",
+        "multimedia"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:bifurkasi.py:sine_pwlcm_map",
+      "type": "function",
+      "name": "sine_pwlcm_map",
+      "filePath": "bifurkasi.py",
+      "lineRange": [
+        5,
+        19
+      ],
+      "summary": "Fungsi sine_pwlcm_map untuk memproses operasi terkait.",
+      "tags": [
+        "kriptografi-chaos",
+        "fungsi-python"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:bifurkasi.py",
+      "target": "function:bifurkasi.py:sine_pwlcm_map",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:bifurkasi.py",
+      "target": "function:bifurkasi.py:sine_pwlcm_map",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}
